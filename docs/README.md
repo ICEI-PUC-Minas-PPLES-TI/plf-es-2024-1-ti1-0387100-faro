@@ -1,4 +1,4 @@
-![image](https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2024-1-ti1-0387100-faro/assets/137515868/54826a11-e7f3-4046-9d0d-786cc62f0465)# Projeto FARO
+# Projeto FARO
 Este é o projeto de uma aplicação Web desenvolvido no contexto universitário na disciplina de Trabalho Interdisciplinar de Aplicações Web, realizado em equipe e com supervisão dos professores responsáveis.
 
 FARO é sigla para Facilidade, Acompanhamento, Rastreamento e Organização; objetivos que nosso projeto visa cobrir na solução de problemas, desafios e dificuldades para tutores de pets.
