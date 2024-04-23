@@ -1,63 +1,66 @@
-# Documentação do Projeto (TIDocs)
+![image](https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2024-1-ti1-0387100-faro/assets/137515868/54826a11-e7f3-4046-9d0d-786cc62f0465)# Projeto FARO
+Este é o projeto de uma aplicação Web desenvolvido no contexto universitário na disciplina de Trabalho Interdisciplinar de Aplicações Web, realizado em equipe e com supervisão dos professores responsáveis.
 
-Esta pasta armazena a documentação do projeto para a disciplina de **Trabalho Interdisciplinar 1** dos cursos de Tecnologia da Informação da **[PUC Minas](https://pucminas.br)**. Essa documentação é estruturada na forma de um site que fica disponível por meio do GitHub Pages e pode ser incluído, também, no site da solução hospedada. Um [exemplo publicado do TIDocs](https://webtech-puc-minas.github.io/ti1-template/) está disponível por meio do repositório do **[WebTech PUC Minas](https://github.com/webtech-pucminas)**.
+FARO é sigla para Facilidade, Acompanhamento, Rastreamento e Organização; objetivos que nosso projeto visa cobrir na solução de problemas, desafios e dificuldades para tutores de pets.
 
-A documentação do projeto inclui as seguintes seções:
+O time busca resolver a dor e a ansiedade que muitas pessoas enfrentam ao lidar com problemas relacionados a seus animais de estimação. Isso inclui a preocupação com o controle de vacinas e consultas veterinárias, encontrar serviços próximos de qualidade, lidar com situações de achados e perdidos de animais de estimação, encontrar lares amorosos para animais em situação de adoção e ter acesso a informações relevantes através de um fórum e artigos.
+As pessoas que sofrem dessa dor são aquelas que têm um vínculo emocional profundo com seus animais de estimação e que se preocupam com seu bem-estar, indepente da idade ou do contexto social. Muitas vezes, essas pessoas podem se sentir perdidas ou sobrecarregadas ao tentar lidar com questões de saúde, localização e cuidado de seus animais.
+Esse problema ocorre em um contexto em que os animais de estimação são considerados membros da família, e os proprietários estão cada vez mais conscientes da importância de fornecer cuidados adequados a eles. No entanto, a falta de recursos centralizados e acessíveis para lidar com essas questões pode levar a frustração e preocupação desnecessárias.
 
-1. Introdução
-2. Contexto
-3. Concepção
-4. Metodologia
-5. Solução
-6. FAQ (Questões frequentes)
-7. Referências Bibliográficas
+## Alunos integrantes da equipe
+Isabela Souza Sales
+Kayler de Freitas Moura
+Natália dos Reis Santos
 
-O template para o site é estruturado e permite que a equipe evolua a documentação do projeto à medida que avance no desenvolvimento.
-
-# Orientações gerais
-
-Esta seção traz explicações breves sobre o conjunto de artefatos que precisam ser incluídos na documentação do projeto com uma conjunto de links importantes para que se entenda como criar cada coisa. 
+## Professores responsáveis
+Rommel Vieira Carneiro
+Cleiton Silva Tavares
 
 ## Problema
 
-Nesse momento você deve apresentar o problema que a sua aplicação deve resolver. No entanto, não é a hora de comentar sobre a aplicação. Descreva também o contexto em que essa aplicação será usada, se houver: empresa, tecnologias, etc. Novamente, descreva apenas o que de fato existir, pois ainda não é a hora de apresentar requisitos detalhados ou projetos.
+O cuidado com animais de estimação é uma responsabilidade significativa para muitas pessoas, que consideram seus pets como membros queridos da família. No entanto, mesmo com todo o amor e dedicação, surgem desafios e preocupações que podem gerar ansiedade e incerteza nos tutores.
 
-Nesse momento, o grupo pode optar por fazer uso de ferramentas como Design Thinking, que permite um olhar de ponta a ponta para o problema.
+Um dos principais problemas enfrentados pelos tutores de animais é a segurança e bem-estar de seus companheiros. Quando um pet se perde, isso pode causar grande aflição a eles, que buscam desesperadamente por maneiras de encontrá-los o mais rápido possível. Atualmente, a falta de uma plataforma centralizada para reportar animais perdidos e localizar pets desaparecidos dificulta esse processo, levando a atrasos e dificuldades na reunião de tutores e pets perdidos.
 
-**Links Úteis**:
+Além disso, encontrar serviços de alta qualidade para cuidar dos animais, como veterinários confiáveis, creches e serviços de adoção, pode ser uma tarefa desafiadora. Muitas vezes, os donbs enfrentam dificuldades para localizar e contatar esses serviços, o que pode comprometer o bem-estar e a saúde de seus animais de estimação.
 
-- [Objetivos, Problema de pesquisa e Justificativa](https://medium.com/@versioparole/objetivos-problema-de-pesquisa-e-justificativa-c98c8233b9c3)
-- [Matriz Certezas, Suposições e Dúvidas](https://medium.com/educa%C3%A7%C3%A3o-fora-da-caixa/matriz-certezas-suposi%C3%A7%C3%B5es-e-d%C3%BAvidas-fa2263633655)
-- [Brainstorming](https://www.euax.com.br/2018/09/brainstorming/)
+Outro problema comum é o processo de adoção. Embora muitas pessoas estejam interessadas em oferecer um lar amoroso a animais resgatados, o processo de encontrar abrigos de animais, conhecer os animais disponíveis para adoção e realizar o processo de adoção pode ser complexo e demorado.
+
+Diante desses desafios, surge a necessidade de uma solução abrangente que simplifique o cuidado com animais de estimação, oferecendo recursos para localizar pets perdidos, conectar tutores a serviços de qualidade e facilitar o processo de adoção de animais resgatados. O FARO surge como uma resposta a essas necessidades, fornecendo uma plataforma centralizada e acessível para donos de animais de estimação enfrentarem os desafios do cuidado com seus companheiros de coração.
 
 ## Objetivos
 
-Aqui você deve descrever os objetivos do trabalho indicando que o objetivo geral é desenvolver um software para solucionar o problema apresentado acima. Apresente também alguns (pelo menos 2) objetivos específicos dependendo de onde você vai querer concentrar a sua prática investigativa, ou como você vai aprofundar no seu trabalho.
+O principal objetivo do projeto FARO é desenvolver um software abrangente para solucionar os desafios enfrentados pelos tutores de animais de estimação, fornecendo uma plataforma centralizada e acessível para cuidar de pets perdidos, conectar tutores a serviços de qualidade e facilitar o processo de adoção de animais resgatados.
 
-**Links Úteis**:
+Além do objetivo geral, o projeto tem os seguintes objetivos específicos:
 
-- [Objetivo geral e objetivo específico: como fazer e quais verbos utilizar](https://blog.mettzer.com/diferenca-entre-objetivo-geral-e-objetivo-especifico/)
+Facilitar a localização de pets perdidos: Desenvolver funcionalidades que permitam aos tutores registrar informações detalhadas sobre animais perdidos e facilitar a busca por pets desaparecidos, garantindo uma rápida reunião entre tutores e eles.
+Conectar tutores a serviços de qualidade: Implementar recursos que permitam aos tutores encontrar e contatar facilmente serviços de alta qualidade para cuidar de seus animais de estimação, como veterinários, creches e serviços de adoção, garantindo o bem-estar e a saúde dos pets.
+Simplificar o processo de adoção de animais: Desenvolver uma interface intuitiva e acessível para facilitar o processo de adoção de animais resgatados, conectando tutores interessados a abrigos de animais e resgates locais, tornando o processo de adoção mais rápido e transparente.
+Esses objetivos refletem o foco do projeto em resolver os problemas identificados e fornecer uma solução abrangente e eficaz para os donos de animais de estimação.
 
 ## Justificativa
 
-Descreva a importância ou a motivação para trabalhar com esta aplicação que você escolheu. Indique as razões pelas quais você escolheu seus objetivos específicos ou as razões para aprofundar em certos aspectos do software.
+A escolha de desenvolver o FARO surge do amor aos animais e do desejo de ajudar as pessoas na rotina, muitas vezes difícil e trabalhosa, que é cuidar de um bichinho de estimação, tidos pelos integrantes do nosso time. Existem várias razões que justificam e fundamentam o desenvolvimento desta aplicação:
 
-O grupo de trabalho pode fazer uso de questionários, entrevistas e dados estatísticos, que podem ser apresentados, com o objetivo de esclarecer detalhes do problema que será abordado pelo grupo.
-
-**Links Úteis**:
-
-- [Como montar a justificativa](https://guiadamonografia.com.br/como-montar-justificativa-do-tcc/)
+Atender a uma demanda crescente: Com o aumento do número de tutores de animais de estimação em todo o mundo, existe uma demanda crescente por soluções que facilitem o cuidado com os pets. O FARO visa atender a essa demanda, oferecendo uma plataforma centralizada e acessível para os tutores gerenciarem todas as necessidades de seus animais de estimação em um só lugar.
+Resolver problemas reais: O projeto aborda problemas reais enfrentados pelos tutores, como a localização de pets perdidos, a busca por serviços de qualidade e o processo de adoção de animais resgatados. Ao fornecer soluções para esses problemas, o FARO busca melhorar a vida dos tutores e de seus pets, reduzindo a ansiedade e o estresse associados ao cuidado com animais de estimação.
+Contribuir para o bem-estar animal: Ao facilitar o cuidado com os animais de estimação, o aplicativo contribui para o bem-estar dos pets, garantindo que recebam os cuidados e a atenção necessários para uma vida saudável e feliz. Isso é especialmente importante em um momento em que o número de animais abandonados e em situação de rua está aumentando, destacando a necessidade de soluções que promovam a adoção responsável e o cuidado com os animais.
+Utilização de metodologias eficazes: O nosso time fez uso de metodologias como questionários, entrevistas e análise de dados estatísticos para compreender melhor as necessidades e preocupações dos tutores de animais de estimação. Essas metodologias ajudaram a equipe a desenvolver uma solução que seja verdadeiramente centrada no usuário e capaz de atender às expectativas e demandas do público-alvo.
+Em resumo, a justificativa para trabalhar com o FARO reside na importância de abordar desafios reais enfrentados pelos tutores de animais de estimação e fornecer uma solução eficaz e abrangente para esses problemas, contribuindo para o bem-estar dos pets e facilitando o cuidado com esses companheiros queridos.
 
 ## Público-Alvo
 
-Descreva quem serão as pessoas que usarão a sua aplicação indicando os diferentes perfis. O objetivo aqui não é definir quem serão os clientes ou quais serão os papéis dos usuários na aplicação. A ideia é, dentro do possível, conhecer um pouco mais sobre o perfil dos usuários: conhecimentos prévios, relação com a tecnologia, relações hierárquicas, etc.
+O FARO é destinado a uma ampla gama de usuários que compartilham uma preocupação comum: o cuidado com seus animais de estimação. Embora os perfis possam variar, o aplicativo é projetado para atender às necessidades de diferentes tipos de tutores de animais de estimação, independentemente de seu conhecimento prévio em tecnologia ou de sua relação com ela.
+
+Os principais perfis de usuários alvo incluem:
+
+Tutores de Animais de Estimação: Este é o público principal do app, composto por pessoas que têm animais de estimação e estão envolvidas no seu cuidado diário. Esses usuários podem ser proprietários de cães, gatos, pássaros, ou qualquer outro tipo de animal de estimação. Eles têm um forte vínculo emocional com seus pets e estão interessados em garantir seu bem-estar e segurança.
+Pessoas Interessadas em Adoção de Animais: O website também é direcionado a pessoas que estão interessadas em adotar um animalzinho. Esses usuários podem estar procurando por um novo companheiro para adicionar à sua família e estão em busca de informações sobre animais disponíveis para adoção em abrigos e resgates locais.
+Profissionais de Serviços para Animais de Estimação: Além dos tutores de animais de estimação, o FARO também pode ser utilizado por profissionais que prestam serviços relacionados a pets, como veterinários, adestradores, pet-sitters e donos de abrigos. Esses usuários podem usar o aplicativo para promover seus serviços e se conectar com tutores em busca de assistência para seus pets.
+O FARO é projetado para ser intuitivo e fácil de usar, adequado para usuários com diferentes níveis de experiência em tecnologia. Desde os tutores de animais mais experientes até aqueles que estão apenas começando a explorar o mundo dos cuidados com animais de estimação, visamos fornecer uma experiência acessível e eficaz para todos os usuários.
 
 Adicione informações sobre o público-alvo por meio de uma descrição textual, ou diagramas de personas, mapa de stakeholders, ou como o grupo achar mais conveniente.
-
-**Links Úteis**:
-
-- [Público-alvo: o que é, tipos, como definir seu público e exemplos](https://klickpages.com.br/blog/publico-alvo-o-que-e/)
-- [Qual a diferença entre público-alvo e persona?](https://rockcontent.com/blog/diferenca-publico-alvo-e-persona/)
 
 ## Personas
 
@@ -72,60 +75,114 @@ Relacione as personas identificadas no seu projeto e os respectivos mapas de emp
 
 ## Histórias de Usuários
 
-Apresente aqui as histórias de usuário que são relevantes para o projeto de sua solução. As Histórias de Usuário consistem em uma ferramenta poderosa para a compreensão e elicitação dos requisitos funcionais e não funcionais da sua aplicação. Se possível, agrupe as histórias de usuário por contexto, para facilitar consultas recorrentes à essa parte do documento.
+Aqui estão as histórias de usuário agrupadas por contexto para o projeto FARO:
 
-**Links Úteis**:
+### Localização de Pets Perdidos:
+1. Como um tutor de animal de estimação preocupado com a segurança e bem-estar do meu companheiro, gostaria de um sistema que me ajudasse a localizar meu pet perdido rapidamente, para que eu possa encontrá-lo o mais rápido possível.
 
-- [Histórias de usuários com exemplos e template](https://www.atlassian.com/br/agile/project-management/user-stories)
-- [Como escrever boas histórias de usuário (User Stories)](https://medium.com/vertice/como-escrever-boas-users-stories-hist%C3%B3rias-de-usu%C3%A1rios-b29c75043fac)
+### Conexão com Serviços de Qualidade:
+1. Como uma dona de pet dedicada, desejo um sistema que me conecte facilmente com serviços de alta qualidade para cuidar do meu animal de estimação, garantindo seu bem-estar.
+
+### Facilitação do Processo de Adoção:
+1. Como alguém interessado em adotar um animal de estimação, desejo uma plataforma que facilite o processo de encontrar um pet para adoção, conectando-me com abrigos de animais e resgates locais, para que eu possa encontrar o companheiro perfeito para minha família.
+
+Essas histórias de usuário refletem as principais necessidades e objetivos dos diferentes tipos de usuários, e fornecem uma base sólida para a definição dos requisitos funcionais e não funcionais da aplicação. Elas são essenciais para orientar o desenvolvimento do sistema e garantir que ele atenda às expectativas e necessidades dos usuários finais.
 
 ## Requisitos
+Os requisitos levantados nas entrevistas qualitativas e nas histórias de usuário foram:
 
-Os requisitos de um projeto são classificados em dois grupos:
+### Requisitos Funcionais:
 
-- [Requisitos Funcionais (RF)](https://pt.wikipedia.org/wiki/Requisito_funcional):
-  correspondem a uma funcionalidade que deve estar presente na plataforma (ex: cadastro de usuário).
-- [Requisitos Não Funcionais (RNF)](https://pt.wikipedia.org/wiki/Requisito_n%C3%A3o_funcional):
-  correspondem a uma característica técnica, seja de usabilidade, desempenho, confiabilidade, segurança ou outro (ex: suporte a dispositivos iOS e Android).
+1. **Cadastro e Acompanhamento de Vacinas e Consultas:**
+   - O sistema deve permitir que os tutores cadastrem informações detalhadas sobre as vacinas e consultas veterinárias de seus animais de estimação.
+   - Deve ser possível registrar a data de vacinação, tipo de vacina administrada e outras informações relevantes.
+   - O sistema deve fornecer uma funcionalidade para acompanhar as próximas vacinas e consultas agendadas.
 
-Lembre-se que cada requisito deve corresponder à uma e somente uma característica alvo da sua solução. Além disso, certifique-se de que todos os aspectos capturados nas Histórias de Usuário foram cobertos.
+2. **Registro de Animais Perdidos e Para Adoção:**
+   - Os usuários devem poder registrar animais perdidos, incluindo informações como descrição física, localização e foto.
+   - Também deve ser possível listar animais disponíveis para adoção, com detalhes sobre o animal e informações de contato do abrigo ou resgate.
+   - O sistema deve facilitar a busca e o contato com tutores de animais perdidos e abrigos de animais para adoção.
 
-**Links Úteis**:
+3. **Acesso a Informação Útil e Interessante:**
+   - O sistema deve fornecer acesso a informações úteis e interessantes sobre a vida e cuidado de animais de estimação.
+   - Isso pode incluir artigos, dicas de cuidados, vídeos educativos e outras fontes de informação relevantes para os tutores de animais.
 
-- [O que são Requisitos Funcionais e Requisitos Não Funcionais?](https://codificar.com.br/requisitos-funcionais-nao-funcionais/)
-- [O que são requisitos funcionais e requisitos não funcionais?](https://analisederequisitos.com.br/requisitos-funcionais-e-requisitos-nao-funcionais-o-que-sao/)
+4. **Recomendação de Serviços e Produtos:**
+   - Com base no perfil do usuário e nas necessidades do animal de estimação, o sistema deve ser capaz de recomendar serviços e produtos relevantes, como veterinários, pet shops e produtos de cuidado animal.
+
+### Requisitos Não Funcionais:
+
+1. **Fácil Uso por Todos:**
+   - O sistema deve ser intuitivo e fácil de usar, adequado para usuários com diferentes níveis de experiência em tecnologia.
+   - Deve fornecer uma interface amigável e instruções claras para guiar os usuários por todas as funcionalidades do sistema.
+
+2. **Confiável e Segura:**
+   - O sistema deve ser confiável, livre de erros e capaz de lidar com uma grande quantidade de dados sem falhas.
+   - Deve implementar medidas de segurança robustas para proteger os dados pessoais dos usuários e garantir a integridade das informações cadastradas no sistema.
+
+3. **Compatível com Diversos Dispositivos:**
+   - O sistema deve ser compatível com uma variedade de dispositivos, incluindo desktops, laptops, smartphones e tablets.
+   - Deve ser otimizado para diferentes tamanhos de tela e navegadores web populares para garantir uma experiência consistente em todos os dispositivos.
+
+4. **Intuitiva e Responsiva:**
+   - A interface do usuário deve ser intuitiva e responsiva, adaptando-se dinamicamente ao tamanho da tela e às ações do usuário.
+   - Deve fornecer feedback imediato para as ações do usuário e responder rapidamente aos comandos, garantindo uma experiência de usuário ágil e eficiente.
+
+5. **Dedicada ao Bem dos Animais:**
+   - O sistema deve ser projetado com foco no bem-estar dos animais, promovendo a adoção responsável, o cuidado adequado e a segurança dos pets.
+   - Deve incluir recursos e informações que incentivem os tutores a fornecerem o melhor cuidado possível para seus animais de estimação.
+
+Esses requisitos fornecem uma base sólida para o desenvolvimento do FARO, garantindo que a aplicação atenda às necessidades dos usuários finais de forma eficaz, intuitiva e responsável.
 
 ## User Flow
 
-Fluxo de usuário (User Flow) é uma técnica que permite ao desenvolvedor mapear todo fluxo de telas do site ou app. Essa técnica funciona para alinhar os caminhos e as possíveis ações que o usuário pode fazer junto com os membros de sua equipe.
+### Funcionalidades Principais
+O FARO oferece uma variedade de funcionalidades para facilitar o cuidado com seus animais de estimação. Abaixo estão algumas das principais funcionalidades:
 
-**Links Úteis**:
+### Cadastro e Acompanhamento de Vacinas e Consultas
+O FARO permite que os tutores cadastrem e acompanhem as vacinas e consultas veterinárias de seus animais de estimação. Com esta funcionalidade, os usuários podem manter um registro preciso da saúde de seus animais e garantir que eles recebam os cuidados necessários.
 
-- [User Flow: O Quê É e Como Fazer?](https://medium.com/7bits/fluxo-de-usu%C3%A1rio-user-flow-o-que-%C3%A9-como-fazer-79d965872534)
-- [User Flow vs Site Maps](http://designr.com.br/sitemap-e-user-flow-quais-as-diferencas-e-quando-usar-cada-um/)
-- [Top 25 User Flow Tools &amp; Templates for Smooth](https://www.mockplus.com/blog/post/user-flow-tools)
+### Cadastro de Usuários e Pets
+Os usuários podem se cadastrar no FARO fornecendo informações básicas, como nome, e-mail e senha. Além disso, eles podem cadastrar seus animais de estimação, inserindo detalhes como nome, espécie, raça e data de nascimento. Este processo é realizado de forma simples e intuitiva, através de um formulário de cadastro.
+
+### Mural de Animais Perdidos e para Doação
+O aplicativo possui um mural dedicado a animais perdidos e para doação. Os usuários podem listar animais perdidos, fornecendo informações detalhadas, como descrição física e localização. Da mesma forma, animais disponíveis para adoção também podem ser listados no mural, com detalhes sobre o animal e informações de contato do abrigo ou resgate responsável.
+
+### Fórum com Artigos Interessantes e Perguntas Frequentes
+O app também possui um fórum integrado onde os usuários podem encontrar uma variedade de artigos interessantes sobre a vida e cuidado de animais de estimação. Além disso, o fórum contém uma seção de perguntas frequentes, onde os usuários podem encontrar respostas para dúvidas comuns sobre o cuidado com animais.
+
+Essas funcionalidades são essenciais para proporcionar aos usuários uma experiência completa e útil ao usar o FARO. Ao oferecer recursos como cadastro e acompanhamento de vacinas, mural de animais perdidos e para doação, e um fórum com artigos e perguntas frequentes, o FARO visa fornecer aos tutores todas as ferramentas necessárias para cuidar de seus animais de estimação de forma eficaz e responsável.
 
 ## Wireframes
 
-Wireframes são protótipos das telas da aplicação usados em design de interface para sugerir a estrutura de um site web e seu relacionamentos entre suas páginas. Um wireframe web é uma ilustração semelhante ao layout de elementos fundamentais na interface.
-
-**Links Úteis**:
-
-- [Ferramentas de Wireframes](https://rockcontent.com/blog/wireframes/)
-- [Figma](https://www.figma.com/)
-- [Adobe XD](https://www.adobe.com/br/products/xd.html#scroll)
-- [MarvelApp](https://marvelapp.com/developers/documentation/tutorials/)
+Utilizamos o Marvell App para criação dos wireframes e do modelo interativo e pode ser acessado pelo link abaixo:
+[Visualizar WireFrame no Marvell App](https://marvelapp.com/prototype/10c3gddh)
 
 ## Gestão de Projetos
 
- Nesta parte do documento, você deve apresentar  o processo de trabalho baseado nas metodologias ágeis, a divisão de papéis e tarefas, as ferramentas empregadas e como foi realizada a gestão de configuração do projeto via GitHub.
+O projeto FARO é gerenciado com base nas metodologias ágeis, com ênfase na implementação do Framework Scrum. Abaixo estão os detalhes sobre o processo de trabalho, divisão de papéis e tarefas, ferramentas empregadas e gestão de configuração do projeto:
 
-Coloque detalhes sobre o processo de Design Thinking e a implementação do Framework Scrum seguido pelo grupo. O grupo poderá fazer uso de ferramentas on-line para acompanhar o andamento do projeto, a execução das tarefas e o status de desenvolvimento da solução.
+### Processo de Trabalho
 
-**Links Úteis**:
+O processo de trabalho segue os princípios do Scrum, com iterações curtas e foco na entrega contínua de valor para os usuários. As atividades são planejadas em sprints, geralmente com duração de duas semanas, durante as quais são realizadas reuniões diárias de acompanhamento do progresso.
 
-- [Sobre Projects - GitHub Docs](https://docs.github.com/pt/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects)
-- [Gestão de projetos com GitHub | balta.io](https://balta.io/blog/gestao-de-projetos-com-github)
-- [(460) GitHub Projects - YouTube](https://www.youtube.com/playlist?list=PLiO7XHcmTsldZR93nkTFmmWbCEVF_8F5H)
-- [11 Passos Essenciais para Implantar Scrum no seu Projeto](https://mindmaster.com.br/scrum-11-passos/)
-- [Scrum em 9 minutos](https://www.youtube.com/watch?v=XfvQWnRgxG0)
+### Divisão de Papéis e Tarefas
+
+O time é composto por 3 membros, todos compartilhando as tarefas a serem executadas e compondo o time de desenvolvimento:
+
+### Ferramentas Empregadas
+
+- **Trello:** Utilizado para gerenciar o backlog do produto, planejar as sprints e acompanhar o progresso das tarefas. O Trello permite uma visualização clara das atividades em andamento e das próximas entregas.
+- **Marvel App:** Utilizado para criar wireframes interativos das telas do aplicativo FARO. Os wireframes ajudam na visualização e validação das funcionalidades antes da implementação.
+- **Reuniões no Google Meets:** Realizadas diariamente para acompanhar o progresso das tarefas, discutir impedimentos e planejar as próximas atividades. As reuniões proporcionam uma comunicação eficaz entre os membros da equipe, mesmo trabalhando remotamente.
+- **GitHub:** Utilizado para documentar o projeto, gerenciar o código fonte e controlar as alterações feitas ao longo do desenvolvimento. O GitHub facilita a colaboração entre os membros da equipe e garante a integridade do código fonte.
+
+### Gestão de Configuração do Projeto via GitHub
+
+No GitHub, a gestão de configuração do projeto é realizada através de:
+- **Repositório do Projeto:** Onde todo o código fonte e documentação são armazenados. O repositório é organizado de forma estruturada, com pastas separadas para diferentes componentes do projeto.
+
+O uso conjunto dessas ferramentas e práticas permite que o nosso time trabalhe de forma eficiente, colaborativa e focada na entrega de valor para os usuários, seguindo os princípios do Scrum e das metodologias ágeis para um trabalho final o mais perfeito possível!
+
+
+#### Feito com ❤ por Isabela, Kayler e Natália
