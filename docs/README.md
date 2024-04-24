@@ -8,13 +8,13 @@ As pessoas que sofrem dessa dor são aquelas que têm um vínculo emocional prof
 Esse problema ocorre em um contexto em que os animais de estimação são considerados membros da família, e os proprietários estão cada vez mais conscientes da importância de fornecer cuidados adequados a eles. No entanto, a falta de recursos centralizados e acessíveis para lidar com essas questões pode levar a frustração e preocupação desnecessárias.
 
 ## Alunos integrantes da equipe
-Isabela Souza Sales
-Kayler de Freitas Moura
-Natália dos Reis Santos
+* Isabela Souza Sales
+* Kayler de Freitas Moura
+* Natália dos Reis Santos
 
 ## Professores responsáveis
-Rommel Vieira Carneiro
-Cleiton Silva Tavares
+* Rommel Vieira Carneiro
+* Cleiton Silva Tavares
 
 ## Problema
 
@@ -64,14 +64,42 @@ Adicione informações sobre o público-alvo por meio de uma descrição textual
 
 ## Personas
 
-Relacione as personas identificadas no seu projeto e os respectivos mapas de empatia. Lembre-se que você deve ser enumerar e descrever precisamente e de forma personalizada todos os principais envolvidos com a solução almeja.
+A partir das necessidades, dores, e preferências das três personas podemos concluir uma solução que atenda os objetivos individuais de cada uma. 
 
-**Links Úteis**:
+Então, como podemos ajudar essas três personas? 
 
-- [Persona x Público-alvo](https://flammo.com.br/blog/persona-e-publico-alvo-qual-a-diferenca/)
-- [O que é persona?](https://resultadosdigitais.com.br/blog/persona-o-que-e/)
-- [Rock Content](https://rockcontent.com/blog/personas/)
-- [Criar personas (Hotmart)](https://blog.hotmart.com/pt-br/como-criar-persona-negocio/)
+### Apresentação das Personas:  
+
+#### Lupércio - ‘O amante dos post-its' e da empatia:  
+
+Esta persona valoriza a organização tradicional, preferindo papel e post-its para acompanhar compromissos e tarefas. Busca uma abordagem empática no atendimento, valorizando a interação humana.  
+
+#### Aurora - A tecnológica e prática:  
+
+Totalmente imersa no mundo digital, esta persona utiliza o celular como ferramenta central para todas as suas necessidades diárias. Procura soluções práticas e eficientes que possam ser acessadas rapidamente através do celular. Enfrenta dificuldades em encontrar serviços confiáveis e gerenciar seu tempo, especialmente no cuidado com seus pets.  
+
+#### Johnny - O organizado e preocupado com segurança:  
+
+ Prefere o computador e utiliza planilhas para se organizar, buscando segurança e proteção de dados. Tem dificuldades em encontrar serviços confiáveis e próximos à sua localização, especialmente para cuidar de um pet grande.  
+
+#### Como atender às necessidades dessas personas de forma conjunta?  
+
+Uma solução digital que combine a praticidade do celular com a segurança e organização proporcionadas pelo computador pode ser a resposta. Essa solução poderia incluir:  
+
+#### Aplicativo Mobile: Um aplicativo móvel intuitivo, permitindo que Lupércio acompanhe seus compromissos de forma digitalizada.  Recursos de rastreamento e recomendações de serviços próximos, atendendo às necessidades da Aurora.  
+Uma interface amigável e empática, oferecendo suporte personalizado e humanizado como Johnny gosta. 
+
+#### Plataforma Web:  
+
+Uma plataforma web segura e protegida, permitindo que Johnny acesse suas informações e planilhas de qualquer dispositivo.  
+
+ Recursos de organização facilitando a busca por serviços de confiança para o cuidado de seu pet.  
+
+#### Benefícios para todas as personas:  
+
+Acesso facilitado a serviços de confiança, atendendo às necessidades da Aurora e Johnny.  
+Maior organização e controle de compromissos, digitalmente mas com abordagem simples para Lupércio. 
+ Atendimento personalizado e acolhedor, promovendo uma experiência positiva e única para todas as personas.
 
 ## Histórias de Usuários
 
@@ -133,6 +161,9 @@ Os requisitos levantados nas entrevistas qualitativas e nas histórias de usuár
    - Deve incluir recursos e informações que incentivem os tutores a fornecerem o melhor cuidado possível para seus animais de estimação.
 
 Esses requisitos fornecem uma base sólida para o desenvolvimento do FARO, garantindo que a aplicação atenda às necessidades dos usuários finais de forma eficaz, intuitiva e responsável.
+
+Mapa de criação das Personas, de suas propostas de valor e Brainstorming pode ser conferido no asset abaixo:
+![Identificação das Personas usando Miro](docs/assets/files/processo-dt.pdf)
 
 ## User Flow
 
