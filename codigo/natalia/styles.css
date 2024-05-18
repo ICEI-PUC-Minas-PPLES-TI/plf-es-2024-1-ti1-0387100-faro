@@ -1,0 +1,94 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+#shoulder {
+    background-color: #643F92;
+    color: #ffffff;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 90px; /* Largura shoulder */
+    height: 100%; /* Altura da tela */
+}
+
+#menu {
+    margin-top: 50px; /* Espaçamento da logo */
+}
+
+#logo {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 800;
+    font-size: 30px;
+}
+
+
+#menu ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#menu ul li {
+    margin-bottom: 10px;
+    filter: invert(1);
+    margin-top: 40px;
+}
+
+#menu ul li img{
+    width: 80%;
+    height: 100%;
+    padding-left: 10px;
+}
+
+#menu ul li a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+#content {
+    background: linear-gradient(to top right, #ffffff, #BEC3FC);
+    height: calc(100vh - 60px); /*Ajusta de acordo com a altura*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 130px; /*Largura do shoulder*/
+    width: calc(100% - 130px); /*Espaço restante após o shoulder*/
+}
+
+#center-card {
+    width: 600px;
+    height: 200px;
+    background-color: #643F92;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+#logo-big {
+    font-family: Montserrat, sans-serif;
+    color: #ffffff;
+    font-weight: 800;
+    font-size: 90px;
+    position: absolute;
+    text-align: left;
+    padding-left: 10%;
+}
+
+#center-card ul {
+    color: #ffffff;
+    font-family: Montserrat;
+    font-weight: 700;
+    text-align: left; /*Em relação a lista*/
+    position: absolute;
+    padding-left: 65%;
+}
+
+#center-card ul li {
+    margin-bottom: 10px;
+}
