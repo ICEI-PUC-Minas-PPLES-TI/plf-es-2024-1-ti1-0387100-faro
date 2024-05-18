@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="/farum.css">
+  <style id="montserrat">
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+  </style>
+  <title>Fárum</title>
+</head>
+
+<body>
+
+  <div>
+
+    <header id="shoulder">
+      <div class="btn-mobile">
+        <div class="dropdown btn">
+          <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+            Menu
+          </a>
+
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <li>
+              <a class="dropdown-item" href="#sectionProfile">
+                Perfil
+              </a>
+            </li>
+            <li><a class="dropdown-item" href="#">
+                Cartão de vacinas
+              </a>
+            </li>
+            <li><a class="dropdown-item" href="#">
+                Perdi meu pet/Doar
+              </a>
+            </li>
+            <li><a class="dropdown-item" href="#">Serviços
+              </a>
+            </li>
+            <li><a class="dropdown-item" href="#">Fórum e artigos
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div id="logo">FARO</div>
+
+      <div id="menu">
+        <ul>
+          <li><a href="#"><img class="icon" src="../assets/img/profile_icon.png" alt="Perfil"></a></li>
+          <li><a href="#"><img class="icon" src="../assets/img/vaccine_icon.png" alt="Cartão de vacinas"></a></li>
+          <li><a href="#"><img class="icon" src="../assets/img/finder_icon.png" alt="Perdi meu pet/Doar"></a></li>
+          <li><a href="#"><img class="icon" src="../assets/img/services_icon.png" alt="Agregador e serviços"></a></li>
+          <li><a href="#"><img class="icon" src="../assets/img/forum_icon.png" alt="Fórum e artigos"></a></li>
+        </ul>
+      </div>
+
+    </header>
+
+    <div class="farum-bg main-container">
+      <section id="farum">
+        <main>
+          <h1 class="title">Fárum</h1>
+
+          <div class="farum-slider">
+            <div>
+              <button class="farum-seta-anterior controle" aria-label="artigo anterior">
+                <img src="./assets/img/chevron_left_24dp_FILL0_wght400_GRAD0_opsz24.svg" alt="">
+              </button>
+
+              <button class="farum-seta-seguinte controle" aria-label="artigo seguinte">
+                <img src="./assets/img/chevron_right_24dp_FILL0_wght400_GRAD0_opsz24.svg" alt="">
+              </button>
+
+            </div>
+
+
+            <div class="farum-carrosel">
+
+              <div class="farum-card item current-item">
+                <div class="farum-card-foto">
+                  <img src="./assets/img/frutas-que-o-seu-cao-nao-pode-comer-tire-as-suas-duvidas-aqui.jpg" alt="">
+                </div>
+                <div class="farum-card-texto">
+                  <h2>Está Proibido!</h2>
+                  <p>Uvas, passas, abacates e cerejas podem ser prejudiciais, causando desde problemas digestivos até insuficiência renal. Informe-se sobre as frutas proibidas para manter seu pet saudável e seguro.</p>
+                </div>
+              </div>
+
+              <div class="farum-card item">
+                <div class="farum-card-foto">
+                  <img src="./assets/img/frutas-que-o-seu-cao-nao-pode-comer-tire-as-suas-duvidas-aqui.jpg" alt="">
+                </div>
+                <div class="farum-card-texto">
+                  <h2>Está Proibido!</h2>
+                  <p>Uvas, passas, abacates e cerejas podem ser prejudiciais, causando desde problemas digestivos até insuficiência renal. Informe-se sobre as frutas proibidas para manter seu pet saudável e seguro.</p>
+                </div>
+              </div>
+
+              <div class="farum-card item">
+                <div class="farum-card-foto">
+                  <img src="./assets/img/frutas-que-o-seu-cao-nao-pode-comer-tire-as-suas-duvidas-aqui.jpg" alt="">
+                </div>
+                <div class="farum-card-texto">
+                  <h2>Está Proibido!</h2>
+                  <p>Uvas, passas, abacates e cerejas podem ser prejudiciais, causando desde problemas digestivos até insuficiência renal. Informe-se sobre as frutas proibidas para manter seu pet saudável e seguro.</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </main>
+      </section>
+
+      <article class="perguntas container-primario">
+
+        <h2 class="title">perguntas frequentes</h2>
+
+        <div class="perguntas-input-container">
+          <input type="text" id="pesquisaInput" placeholder="Dúvidas? Vamos farejar nossos arquivos para tentar te ajudar">
+        </div>
+
+        <div id="listaFaq">
+          <!-- 
+          <dl>
+
+            <div>
+              <dt><button class="ativa" aria-controls="1" aria-expanded="true">Qual ração devo comprar?</button></dt>
+              <dd id="1" class="">Para escolher a melhor ração para o seu animal de estimação, leve em consideração fatores como tipo de animal, idade, raça, tamanho, condições de saúde, ingredientes e preferências individuais. Certifique-se de optar por uma ração que forneça uma nutrição completa e balanceada, com ingredientes de qualidade. Se necessário, consulte um veterinário para orientação personalizada. Ao fazer uma pesquisa cuidadosa e considerar esses aspectos, você poderá selecionar a ração mais adequada para promover a saúde e o bem-estar do seu animal de estimação.</dd>
+            </div>
+
+          </dl>
+
+          <dl>
+
+            <div>
+              <dt><button class="" aria-controls="2" aria-expanded="false">Qual é a melhor dieta?</button></dt>
+              <dd id="2" class="">Assim como para humanos, determinar a melhor dieta para um animal de estimação depende de vários fatores, como idade, raça, tamanho, condições de saúde e preferências individuais. Geralmente, é recomendável escolher uma ração de alta qualidade que forneça uma nutrição completa e balanceada, com ingredientes adequados para as necessidades específicas do animal. Além disso, considerar a consultoria de um veterinário é fundamental para determinar a dieta mais adequada para promover a saúde e o bem-estar do seu pet.
+              </dd>
+            </div>
+
+          </dl>
+
+          <dl>
+
+            <div>
+              <dt><button class="font-1-m-b c11" aria-controls="3" aria-expanded="false">Como dar banho sem estresse?</button></dt>
+              <dd id="3" class="">Dar banho em um animal de estimação sem estresse requer preparação, paciência e técnicas adequadas. Comece acostumando seu pet ao ambiente do banho, deixando-o explorar o local e associando-o a experiências positivas, como brincadeiras e petiscos. Use água morna e produtos de banho específicos para animais, evitando respingos nos olhos e ouvidos. Faça movimentos suaves e tranquilizadores durante o banho e use reforço positivo, como elogios e petiscos, para recompensar um comportamento calmo. Se o seu pet estiver muito estressado, considere alternativas como banhos secos ou a ajuda de um profissional de banho e tosa.
+              </dd>
+            </div>
+
+          </dl>
+
+          <dl>
+
+            <div>
+              <dt><button class="font-1-m-b c11" aria-controls="4" aria-expanded="false">Vale a pena castrar?</button></dt>
+              <dd id="4" class="">A castração de animais de estimação, tanto fêmeas quanto machos, pode trazer diversos benefícios, incluindo a prevenção de gravidezes indesejadas, redução do risco de certos tipos de câncer, controle de comportamentos indesejados relacionados ao cio e marcação territorial, e contribuição para o controle populacional de animais de rua. No entanto, é importante discutir com um veterinário sobre o momento adequado para a castração e considerar as necessidades individuais de cada animal, levando em conta fatores como idade, saúde e estilo de vida.</dd>
+            </div>
+
+          </dl>
+
+          <dl>
+
+            <div>
+              <dt><button class="font-1-m-b c11" aria-controls="5" aria-expanded="false">Seu pet está amuado?</button></dt>
+              <dd id="5" class="">Se seu pet está amuado, pode ser um sinal de que algo está incomodando-o, como dor, estresse ou tédio. Observar mudanças em seu comportamento e fornecer atenção extra e cuidados pode ajudar a entender e resolver o problema. Se persistir não hesite em levar seu animalzinho ao veterinário.</dd>
+            </div>
+
+          </dl>
+
+          <dl>
+
+            <div>
+              <dt><button class="font-1-m-b c11" aria-controls="6" aria-expanded="false">Vacina nacional x importada?</button></dt>
+              <dd id="6" class="">A escolha entre vacinas nacionais e importadas depende de vários fatores, incluindo a disponibilidade, a eficácia e os requisitos de saúde específicos do país ou região onde você mora ou planeja viajar com seu animal de estimação. Ambas as opções podem oferecer proteção contra doenças, mas é importante consultar um veterinário para determinar qual é a mais adequada para as necessidades do seu pet e para garantir que ele esteja adequadamente imunizado.</dd>
+            </div>
+
+          </dl>
+
+          <dl>
+
+            <div>
+              <dt><button class="font-1-m-b c11" aria-controls="7" aria-expanded="false">Como treinar meu pet para fazer as necessidades no lugar certo?</button></dt>
+              <dd id="7" class="">Treinar um animal de estimação para fazer as necessidades no lugar certo requer paciência e consistência. Comece escolhendo um local específico onde você gostaria que seu pet fizesse as necessidades, seja dentro de casa ou no quintal. Estabeleça uma rotina regular levando-o para esse local após refeições, brincadeiras e sonecas. Reforce positivamente sempre que ele acertar, elogiando e recompensando imediatamente com petiscos ou carinho. Evite punições por erros, pois estas podem causar medo e confusão. Mantenha seu pet sob supervisão constante e limpe qualquer acidente com um removedor de odor específico para animais de estimação. Seja paciente e consistente, e com o tempo, seu pet aprenderá a associar o local correto para fazer as necessidades.</dd>
+            </div>
+
+          </dl> -->
+
+
+        </div>
+        <div class="contato">
+          <p>Não achou sua dúvida? Mande para nós: <a href="ajuda-farum@gmail.com">ajuda-farum@gmail.com</a></p>
+          <img src="./assets/img/no-results.png" alt="">
+        </div>
+      </article>
+    </div>
+
+    <footer>
+      <p>FARO
+        <i class="dog-nose">
+        </i>
+      </p>
+      <p>Todos os direitos reservados.</p>
+    </footer>
+
+  </div>
+
+
+  <script src="/farum.js"></script>
+</body>
+
+</html>

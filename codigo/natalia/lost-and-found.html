@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Achados, Perdidos e Doações</title>
+    <link rel="stylesheet" href="lost-and-found.css">
+    <style id="montserrat">
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+    </style>
+    <script src="lost-and-found.js"></script>
+</head>
+<body>
+    <div id="shoulder">
+        <div id="logo" onclick="">FARO</div>
+        <div id="menu">
+            <ul>
+                <li><a href="#"><img class="icon" src="assets/profile_icon.png" alt="Perfil"></a></li>
+                <li><a href="#"><img class="icon" src="assets/vaccine_icon.png" alt="Cartão de vacinas"></a></li>
+                <li><a href="lost-and-found.html"><img class="icon" src="assets/finder_icon.png" alt="Perdi meu peto/Doar"></a></li>
+                <li><a href="#"><img class="icon" src="assets/services_icon.png" alt="Agregador e serviços"></a></li>
+                <li><a href="#"><img class="icon" src="assets/forum_icon.png" alt="Fórum e artigos"></a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="content">
+        <div class="card-row" id="perdidos">
+            <div class="category-header">
+                <div class="category-title">Perdidos</div>
+                <button onclick="window.location.href = 'index.html'" class="category-button">Perdi meu pet!</button>
+            </div>
+            <!-- Cards de animais perdidos serão adicionados aqui -->
+        </div>
+        <div class="card-row" id="achados">
+            <div class="category-header">
+                <div class="category-title">Achados</div>
+                <button class="category-button">Achei um pet!</button>
+            </div>
+            <!-- Cards de animais achados serão adicionados aqui -->
+        </div>
+        <div class="card-row" id="doacao">
+            <div class="category-header">
+                <div class="category-title">Doação</div>
+                <button class="category-button">Quero doar!</button>
+            </div>
+            <!-- Cards de animais para doação serão adicionados aqui -->
+        </div>
+    </div>
+    
+    
+</body>
+</html>
