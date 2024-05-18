@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
   /* farum */
 
   (function () {
+    // funcao para criar o carrosel
     const controles = document.querySelectorAll(".controle");
     let currentItem = 0;
     const items = document.querySelectorAll(".farum-carrosel .item");
@@ -25,8 +26,6 @@ document.addEventListener("DOMContentLoaded", function () {
           currentItem = totalItems - 1;
         }
 
-        console.log("control", setaEsquerda, currentItem);
-
         items.forEach((item) => item.classList.remove("current-item"));
 
         items[currentItem].scrollIntoView({
@@ -40,6 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   })();
 
+  /* faq */
   (function () {
     // Garantir que o elemento "listaFaq" existe
     const lista = document.getElementById("listaFaq");
@@ -48,19 +48,20 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    const URL_BASE = "/data/perguntasFarum.json";
-    const NUMERO_INICIAL_PERGUNTAS = 8; // Número de perguntas a serem exibidas inicialmente
+    const url_BASE = "./data/perguntasFarum.json";
+    const numero_inicial_perguntas = 8; // ao acessar o sistema a lista vai mostrar só 8 perguntas puxadas do json
 
     async function carregarDados() {
+      //carregando a lista de perguntas pelos dados do json, nessa função também fiz a estruturação do html com base no json
       try {
-        const resposta = await fetch(URL_BASE);
+        const resposta = await fetch(url_BASE);
 
         if (!resposta.ok) {
           throw new Error("Não foi possível carregar os dados!");
         }
         const novasPerguntas = await resposta.json();
         popularLista(novasPerguntas);
-        adicionarEventosPerguntas(); // Adicionada a chamada para adicionar eventos de clique
+        adicionarEventosPerguntas();
       } catch (error) {
         alert(error);
       }
@@ -74,7 +75,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const button = document.createElement("button");
         const dd = document.createElement("dd");
 
-        const id = `pergunta${i + 1}`; // Gerar um ID único para cada pergunta
+        const id = `pergunta${i + 1}`; // gerando o id para cada pergunta
 
         button.className = "ativa";
         button.setAttribute("aria-controls", id);
@@ -90,17 +91,17 @@ document.addEventListener("DOMContentLoaded", function () {
         div.appendChild(dd);
         dl.appendChild(div);
 
-        if (i >= NUMERO_INICIAL_PERGUNTAS) {
+        if (i >= numero_inicial_perguntas) {
           dl.style.display = "none";
         }
 
         lista.appendChild(dl);
       }
-      console.log("Lista populada com sucesso!");
+      //    console.log("lista foi populada");
     }
 
     function adicionarEventosPerguntas() {
-      // Nova função para adicionar eventos de clique aos botões
+      // função para adicionar o evento de clique para abrir e fechar as perguntas que forem filtradas
       const perguntas = document.querySelectorAll("#listaFaq button");
 
       function abrir(event) {
@@ -148,12 +149,13 @@ document.addEventListener("DOMContentLoaded", function () {
   })();
 
   (function () {
-    // Filtrando perguntas
+    // filtrando perguntas de acordo com o que o usuário colocar no input de busca
     const inputPerguntas = document.getElementById("pesquisaInput");
     const listaPerguntas = document.getElementById("listaFaq");
     const contateNos = document.querySelector(".contato");
 
     inputPerguntas.addEventListener("keyup", () => {
+      // essa expressão faz com que o retorno desconsidere tanto letra maiuscula e minuscula como acentuacao, foi o jeito que achei de independentemente de o usuario digitar caracteres especiais a funcao vai filtrar a palavra e fazer a comparacao com o localstorage
       let expressao = inputPerguntas.value
         .normalize("NFD")
         .replace(/[\u0300-\u036f]/g, "")
@@ -163,7 +165,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
       }
 
-      // Fechar todas as respostas abertas
+      // fecha todas as respostas abertas a medida que filtro
       const respostas = listaPerguntas.querySelectorAll("dd");
       respostas.forEach((resposta) => {
         resposta.classList.remove("ativa");
