@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faro - Cadastro de Pets</title>
+    <link rel="stylesheet" href="cadastropet.css">
+    <script defer src="cadastropet.js"></script> 
+</head>
+<body>
+
+    <div id="shoulder">
+        <div id="logo"><h2>FARO</h2></div>
+        <div id="menu">
+            <ul>
+                <li><a href="#"><img class="icon" src="assets.cadastropet/profile_icon.png" alt="Perfil"></a></li>
+                <li><a href="#"><img class="icon" src="assets.cadastropet/vaccine_icon.png" alt="Cartão de vacinas"></a></li>
+                <li><a href="#"><img class="icon" src="assets.cadastropet/finder_icon.png" alt="Perdi meu peto/Doar"></a></li>
+                <li><a href="#"><img class="icon" src="assets.cadastropet/services_icon.png" alt="Agregador e serviços"></a></li>
+                <li><a href="#"><img class="icon" src="assets.cadastropet/forum_icon.png" alt="Fórum e artigos"></a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="formulario">
+        <form id="PetForm">
+            <h1>Cadastre seu pet</h1>
+            <p>Preencha com os dados do pet:</p>
+            <div class="container">
+                <img src="assets.cadastropet/pet-house.png" alt="Perfil" id="iconperfil">
+                <div class="column">
+                    <input type="text" name="nome" id="nome" placeholder="Nome:" required>
+                    <input type="text" name="genero" id="genero" placeholder="Gênero:" required>
+                    <input type="text" name="especie" id="especie" placeholder="Espécie (Ex: Cachorro, gato, etc.):" required>
+                    <input type="text" id="cidade" name="cidade" placeholder="Cidade:" required>
+                </div>
+                <div class="column">
+                    <input type="date" id="datadenascimento" name="datadenascimento" placeholder="Data de Nascimento:" required>
+                    <input type="text" id="raca" name="raca" placeholder="Raça:" required>
+                    <input type="text" id="objetivo" name="objetivo" placeholder="Deseja doar ou buscar um pet:" required>
+                    <input type="submit" id="salvar" value="Salvar informações" name="registrar">
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="tabela">
+        <h2>Pets Cadastrados</h2>
+        <table id="petTable">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Gênero</th>
+                    <th>Espécie</th>
+                    <th>Data de Nascimento</th>
+                    <th>Raça</th>
+                    <th>Cidade</th>
+                    <th>Objetivo</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+</body>
+</html>
