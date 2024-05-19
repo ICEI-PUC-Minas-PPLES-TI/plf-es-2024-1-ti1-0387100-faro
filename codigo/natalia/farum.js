@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const buttonMobile = document.getElementById("button-mobile");
     const menuMobile = document.getElementById("menu");
     const outside = "data-outside";
-    const events = ["click", "touchstart"]; // Eventos que queremos ouvir
+    const events = ["click", "touchstart"]; // eventos que quero quando chamar events
 
     function toggleMenu() {
       menuMobile.classList.toggle("ativa");
@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function handleResize() {
       if (window.innerWidth > 768) {
-        // Ajuste para o breakpoint desejado
+        // condicao para nao dar bug quando o usuario tiver com o mobile aberto e maximizar a tela, antes o mobile ficava bugado e tanto aparecer
         menuMobile.classList.remove("ativa");
         buttonMobile.classList.remove("button-mobile-posicao");
         buttonMobile.classList.remove("fechar");
@@ -52,8 +52,9 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
 
+    // adicionando os eventos
     buttonMobile.addEventListener("click", toggleMenu);
-    window.addEventListener("resize", handleResize); // Adiciona evento para redimensionamento da janela
+    window.addEventListener("resize", handleResize);
   })();
 
   /* farum */
@@ -92,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function () {
           behavior: "smooth",
           block: "nearest",
         });
-        // Adicionando estilo no current-item:
+        // bom para adicionar estilo no current-item dps:
         items[currentItem].classList.add("current-item");
       });
     });
