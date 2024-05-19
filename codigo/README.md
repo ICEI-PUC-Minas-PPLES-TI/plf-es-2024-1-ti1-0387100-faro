@@ -1,4 +1,4 @@
-# Código Fonte
+# Código Fonte FARO
 
 Mantenha neste diretório todo o código fonte do projeto.
 
@@ -10,6 +10,19 @@ Uma sugestão da estrutura de diretórios para o projeto é a seguinte:
 codigo/  (essa pasta aqui)
 │
 ├── index.html
+├── styles.css
+├── Kayler
+|   ├── assets
+|   |   ├── lost_and_found
+|   ├── lost_and_found.css
+|   ├── lost_and_found.html
+|   ├── lost_and_found.js
+|   ├── pet-details.css
+|   ├── pet-details.html
+|   ├── pet-details.js
+├── Pedro
+├── Natalia
+├── Isabela
 │
 ├── assets/
 │   ├── css/
