@@ -1,12 +1,68 @@
 document.addEventListener("DOMContentLoaded", function () {
+  (function () {
+    const html = document.documentElement;
+    const buttonMobile = document.getElementById("button-mobile");
+    const menuMobile = document.getElementById("menu");
+    const outside = "data-outside";
+    const events = ["click", "touchstart"]; // Eventos que queremos ouvir
+
+    function toggleMenu() {
+      menuMobile.classList.toggle("ativa");
+      buttonMobile.classList.toggle("button-mobile-posicao");
+      buttonMobile.classList.toggle("fechar");
+
+      if (menuMobile.classList.contains("ativa")) {
+        setTimeout(() => {
+          events.forEach((event) => {
+            html.addEventListener(event, handleOutsideClick);
+          });
+        });
+      } else {
+        events.forEach((event) => {
+          html.removeEventListener(event, handleOutsideClick);
+        });
+      }
+    }
+
+    function handleOutsideClick(event) {
+      if (
+        !menuMobile.contains(event.target) &&
+        !buttonMobile.contains(event.target)
+      ) {
+        menuMobile.classList.remove("ativa");
+        buttonMobile.classList.remove("button-mobile-posicao");
+        buttonMobile.classList.remove("fechar");
+
+        events.forEach((event) => {
+          html.removeEventListener(event, handleOutsideClick);
+        });
+      }
+    }
+
+    function handleResize() {
+      if (window.innerWidth > 768) {
+        // Ajuste para o breakpoint desejado
+        menuMobile.classList.remove("ativa");
+        buttonMobile.classList.remove("button-mobile-posicao");
+        buttonMobile.classList.remove("fechar");
+
+        events.forEach((event) => {
+          html.removeEventListener(event, handleOutsideClick);
+        });
+      }
+    }
+
+    buttonMobile.addEventListener("click", toggleMenu);
+    window.addEventListener("resize", handleResize); // Adiciona evento para redimensionamento da janela
+  })();
+
   /* farum */
 
   (function () {
-    // funcao para criar o carrosel
+    // Função para criar o carrossel
     const controles = document.querySelectorAll(".controle");
     let currentItem = 0;
-    const items = document.querySelectorAll(".farum-carrosel .item");
-    const totalItems = items.length;
+    let totalItems = 0;
 
     controles.forEach((controle) => {
       controle.addEventListener("click", () => {
@@ -26,6 +82,9 @@ document.addEventListener("DOMContentLoaded", function () {
           currentItem = totalItems - 1;
         }
 
+        console.log("control", setaEsquerda, currentItem);
+
+        const items = document.querySelectorAll(".farum-carrosel .item");
         items.forEach((item) => item.classList.remove("current-item"));
 
         items[currentItem].scrollIntoView({
@@ -33,10 +92,60 @@ document.addEventListener("DOMContentLoaded", function () {
           behavior: "smooth",
           block: "nearest",
         });
-        //adicionando estilo no current-item:
+        // Adicionando estilo no current-item:
         items[currentItem].classList.add("current-item");
       });
     });
+
+    // URL do JSON
+    const url_BASE = "./data/sliderFarum.json";
+
+    // Função para carregar os slides do JSON e preencher o carrossel
+    async function carregarSlides() {
+      try {
+        const resposta = await fetch(url_BASE);
+
+        if (!resposta.ok) {
+          throw new Error("Não foi possível carregar os slides!");
+        }
+
+        const slides = await resposta.json();
+        acrescentarSlides(slides);
+      } catch (error) {
+        alert("Erro ao carregar os slides.");
+      }
+    }
+
+    // Função para preencher o carrossel com os slides
+    function acrescentarSlides(slides) {
+      const carrossel = document.querySelector(".farum-carrosel");
+      carrossel.innerHTML = ""; // Limpar qualquer conteúdo existente
+
+      slides.forEach((slide, index) => {
+        const div = document.createElement("div");
+        div.classList.add("farum-card", "item");
+        if (index === 0) {
+          div.classList.add("current-item");
+        }
+
+        div.innerHTML = `
+      <div class="farum-card-foto">
+        <img src="${slide.imagem}" alt="${slide.titulo}">
+      </div>
+      <div class="farum-card-texto">
+        <h3>${slide.titulo}</h3>
+        <p>${slide.descricao}</p>
+      </div>
+    `;
+
+        carrossel.appendChild(div);
+      });
+
+      totalItems = slides.length; // Atualizar o total de itens
+    }
+
+    // Chama a função para carregar os slides ao iniciar
+    carregarSlides();
   })();
 
   /* faq */
@@ -97,7 +206,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         lista.appendChild(dl);
       }
-      //    console.log("lista foi populada");
     }
 
     function adicionarEventosPerguntas() {
@@ -194,13 +302,13 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       }
 
-      if (!resultadosEncontrados) {
-        contateNos.style.display = "flex";
-        inputPerguntas.style.marginBottom = "3rem";
-      } else {
-        contateNos.style.display = "none";
-        inputPerguntas.style.marginBottom = "0rem";
-      }
+      // if (!resultadosEncontrados) {
+      //   contateNos.style.display = "flex";
+      //   inputPerguntas.style.marginBottom = "3rem";
+      // } else {
+      //   contateNos.style.display = "none";
+      //   inputPerguntas.style.marginBottom = "0rem";
+      // }
     });
   })();
 });

@@ -1,0 +1,42 @@
+[
+  {
+    "imagem": "assets/img/carrosel_dog_melancia.jpg",
+    "titulo": "Frutas? Nem todas pode",
+    "descricao": "Frutas seguras para pets incluem maçãs e bananas, mas evite uvas e abacate, pois podem ser tóxicos para cães e gatos."
+  },
+  {
+    "imagem": "assets/img/carrosel_jametlene-reskp-VDrErQEF9e4-unsplash.jpg",
+    "titulo": "Cuidados com Filhotes",
+    "descricao": "Dicas para cuidar de filhotes: cuidados de saúde, socialização, alimentação e treinamento para garantir um começo saudável."
+  },
+  {
+    "imagem": "assets/img/carrosel_piotr-musiol-PeS2Avev3wY-unsplash.jpg",
+    "titulo": "Passear com gato?",
+    "descricao": "Passear com gatos é possível com coleira e guia adequadas, mas respeite o ritmo e preferências do felino, oferecendo estímulos e segurança."
+  },
+  {
+    "imagem": "assets/img/carrosel_krista-mangulsone-9gz3wfHr65U-unsplash.jpg",
+    "titulo": "Adotar Salva Vidas",
+    "descricao": "A adoção de animais é um ato de compaixão que oferece uma segunda chance de felicidade, reduzindo o abandono e fortalecendo laços entre humanos e animais."
+  },
+  {
+    "imagem": "assets/img/carrosel_megan-lee-zIat10av0zw-unsplash.jpg",
+    "titulo": "Cuidados com Gatos Idosos",
+    "descricao": "Dieta adequada, atividades físicas e visitas regulares ao veterinário são dicas para garantir uma vida longa e saudável ao seu bichinho."
+  },
+  {
+    "imagem": "assets/img/carrosel_james-wainscoat-5TU1htuOUn4-unsplash.jpg",
+    "titulo": "Deixa Voar!",
+    "descricao": "Estresse, falta de espaço, comportamentos inadequados e declínio das populações selvagens são consequências da criação de pássaros em cativeiro...."
+  },
+  {
+    "imagem": "assets/img/carrosel_matt-nelson-aI3EBLvcyu4-unsplash.jpg",
+    "titulo": "Dicas para Adestramento",
+    "descricao": "Descubra as melhores técnicas de adestramento para ensinar truques divertidos e garantir que seu cãozinho se comporte bem."
+  },
+  {
+    "imagem": "assets/img/carrosel_sandy-millar-HoZtQxSpaqo-unsplash .jpg",
+    "titulo": "Tem um coelhinho em casa?",
+    "descricao": "Cuidados necessários para cuidadr de coelhos, incluindo alimentação, habitat adequado e interação social para manter seu amigo feliz."
+  }
+]
