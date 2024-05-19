@@ -11,6 +11,7 @@ codigo/  (essa pasta aqui)
 │
 ├── index.html
 ├── styles.css
+|
 ├── Kayler
 |   ├── assets
 |   |   ├── lost_and_found
@@ -20,8 +21,11 @@ codigo/  (essa pasta aqui)
 |   ├── pet-details.css
 |   ├── pet-details.html
 |   ├── pet-details.js
+|
 ├── Pedro
+|
 ├── Natalia
+|
 ├── Isabela
 │
 ├── assets/
@@ -41,10 +45,6 @@ codigo/  (essa pasta aqui)
 │       ├── font1.ttf
 │       └── (outras fontes)
 │
-├── pages/
-│   ├── about.html
-│   ├── contact.html
-│   └── (outras páginas)
 │
 └── README.md
 ```
