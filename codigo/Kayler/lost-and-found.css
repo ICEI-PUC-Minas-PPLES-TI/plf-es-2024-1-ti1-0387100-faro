@@ -1,0 +1,142 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+#shoulder {
+    background-color: #643F92;
+    color: #ffffff;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 90px; /* Largura shoulder */
+    height: 100%; /* Altura da tela */
+}
+
+#menu {
+    margin-top: 50px; /* Espaçamento da logo */
+}
+
+#logo {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 800;
+    font-size: 30px;
+}
+
+#menu ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#menu ul li {
+    margin-bottom: 10px;
+    filter: invert(1);
+    margin-top: 40px;
+}
+
+#menu ul li img{
+    width: 80%;
+    height: 100%;
+    padding-left: 10px;
+}
+
+#menu ul li a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+#content {
+    background: linear-gradient(to top right, #ffffff, #BEC3FC);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 130px; /*Largura do shoulder*/
+    width: calc(100% - 130px); /*Espaço restante após o shoulder*/
+}
+
+.card-row {
+    flex: 1 1 100%; 
+    display: flex; 
+    flex-wrap: wrap; 
+    margin-bottom: 20px; 
+    justify-content: center;
+}
+
+.card {
+    background-color: #ffffff; /* Cor de fundo branca */
+    border-radius: 15px; /* Bordas arredondadas */
+    width: 300px; /* Largura do card */
+    margin: 10px; /* Margem */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+.card:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+.card img {
+    width: 100%; 
+    height: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 15px; 
+    border-top-right-radius: 15px;
+}
+
+.card .info {
+    padding: 5px;
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    font-family: "Montserrat", sans-serif;
+    font-weight: 800;
+    color: #000000;
+    text-align: center;
+}
+
+.card .info h3, .perdido, .achado, .doacao {
+    text-align: center;
+    font-family: Montserrat;
+}
+
+.card .info p, .perdido p, .achado p, .doacao p{
+    text-align: center;
+    font-weight: 600;
+}
+
+.category-header {
+    display: flex; 
+    flex-wrap: wrap;
+    flex: 1 1 100%;
+    justify-content: space-between;
+    align-items: center; 
+    margin: 15px 30px;
+}
+
+.category-title {
+    color: #643F92; 
+    font-size: 40px;
+    font-weight: 800;
+    margin-right: auto; /* Alinhar esquerda */
+}
+
+.category-button {
+    background-color: #643F92; 
+    color: #ffffff;
+    border: none;
+    padding: 14px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.category-button:hover {
+    transform: scale(1.05);
+}
