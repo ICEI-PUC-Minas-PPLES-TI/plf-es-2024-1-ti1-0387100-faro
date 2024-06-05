@@ -1,0 +1,68 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+#shoulder {
+    background-color: #643F92;
+    color: #ffffff;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 90px; /* Largura shoulder */
+    height: 100%; /* Altura da tela */
+}
+
+#menu {
+    margin-top: 50px; /* Espaçamento da logo */
+}
+
+#logo {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 800;
+    font-size: 30px;
+}
+
+#menu ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#menu ul li {
+    margin-bottom: 10px;
+    filter: invert(1);
+    margin-top: 40px;
+}
+
+#menu ul li img{
+    width: 80%;
+    height: 100%;
+    padding-left: 10px;
+}
+
+#menu ul li a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+#content {
+    background: linear-gradient(to top right, #ffffff, #BEC3FC);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 130px; /*Largura do shoulder*/
+    width: calc(100% - 130px); /*Espaço restante após o shoulder*/
+    height: 100%;
+}
+.pet-photo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+}
