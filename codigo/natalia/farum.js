@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function handleResize() {
       if (window.innerWidth > 768) {
-        // condicao para nao dar bug quando o usuario tiver com o mobile aberto e maximizar a tela, antes o mobile ficava bugado e tanto aparecer
+        // condicao para nao dar bug quando o usuario tiver com o mobile aberto e maximizar a tela, antes o mobile ficava bugado e tentando aparecer
         menuMobile.classList.remove("ativa");
         buttonMobile.classList.remove("button-mobile-posicao");
         buttonMobile.classList.remove("fechar");
@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
   /* farum */
 
   (function () {
-    // Função para criar o carrossel
+    // funcao para criar o carrossel
     const controles = document.querySelectorAll(".controle");
     let currentItem = 0;
     let totalItems = 0;
@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // URL do JSON
     const url_BASE = "./data/sliderFarum.json";
 
-    // Função para carregar os slides do JSON e preencher o carrossel
+    // funcao para carregar os slides do JSON e preencher o carrossel
     async function carregarSlides() {
       try {
         const resposta = await fetch(url_BASE);
@@ -117,7 +117,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
 
-    // Função para preencher o carrossel com os slides
+    // funcao para preencher o carrossel com os slides
     function acrescentarSlides(slides) {
       const carrossel = document.querySelector(".farum-carrosel");
       carrossel.innerHTML = ""; // Limpar qualquer conteúdo existente
@@ -142,16 +142,16 @@ document.addEventListener("DOMContentLoaded", function () {
         carrossel.appendChild(div);
       });
 
-      totalItems = slides.length; // Atualizar o total de itens
+      totalItems = slides.length; // atualizar o total de itens
     }
 
-    // Chama a função para carregar os slides ao iniciar
+    // chama a funcao para carregar os slides ao iniciar
     carregarSlides();
   })();
 
   /* faq */
   (function () {
-    // Garantir que o elemento "listaFaq" existe
+    // garantir que o elemento "listaFaq" existe
     const lista = document.getElementById("listaFaq");
     if (!lista) {
       console.error('Elemento "listaFaq" não encontrado!');
@@ -162,7 +162,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const numero_inicial_perguntas = 8; // ao acessar o sistema a lista vai mostrar só 8 perguntas puxadas do json
 
     async function carregarDados() {
-      //carregando a lista de perguntas pelos dados do json, nessa função também fiz a estruturação do html com base no json
+      //carregando a lista de perguntas pelos dados do json, nessa função tambem fiz a estruturação do html com base no json
       try {
         const resposta = await fetch(url_BASE);
 
@@ -210,7 +210,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function adicionarEventosPerguntas() {
-      // função para adicionar o evento de clique para abrir e fechar as perguntas que forem filtradas
+      // funcao para adicionar o evento de clique para abrir e fechar as perguntas que forem filtradas
       const perguntas = document.querySelectorAll("#listaFaq button");
 
       function abrir(event) {
