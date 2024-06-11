@@ -8,6 +8,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./farum.css">
+  <link rel="stylesheet" href="./cartaoVacina.css">
+
   <title>Fárum</title>
 </head>
 
@@ -71,60 +73,49 @@
 
 
     <div class="main-container">
-      <section id="farum">
-        <main>
-          <h2 class="title">Fárum</h2>
 
-          <div class="farum-slider">
-            <div class="farum-slider-botoes">
-              <button class="farum-seta-anterior controle" aria-label="artigo anterior">
-                <img src="./assets/img/chevron_left_24dp_FILL0_wght400_GRAD0_opsz24.svg" alt="">
-              </button>
+      <section class="cartao-card-container">
 
-              <button class="farum-seta-seguinte controle" aria-label="artigo seguinte">
-                <img src="./assets/img/chevron_right_24dp_FILL0_wght400_GRAD0_opsz24.svg" alt="">
-              </button>
+        <main class="cartao-content">
+          <div id="cartao-modalidades">
+            <span>Consultas</span>
+            <span>Vacinas</span>
+          </div>
 
+          <h2 class="title">Agenda</h2>
+
+          <div>
+
+            <div class="cartao-agendado">
+              <span>Data</span>
+              <p>Modalidade?</p>
+              <span>Horário</span>
+              <span>Pet</span>
             </div>
-
-
-            <div class="farum-carrosel">
+            <div class="cartao-agendado">
+              <span>17/08</span>
+              <p>Checkup Olie</p>
+              <span>08:00h</span>
+              <span>Pet:</span>
             </div>
           </div>
 
         </main>
       </section>
 
-      <article class="perguntas container-primario">
 
-        <h2 class="title">perguntas frequentes</h2>
+      <footer>
+        <p>FARO
+          <i class="dog-nose">
+          </i>
+        </p>
+        <p>Todos os direitos reservados.</p>
+      </footer>
 
-        <div class="perguntas-input-container">
-          <input type="text" id="pesquisaInput" placeholder="Dúvidas? Vamos farejar nossos arquivos para te ajudar">
-        </div>
-
-        <div id="listaFaq">
-        </div>
-
-        <div class="contato">
-          <p>Não achou sua dúvida?<br>Mande para nós: <a href="mailto:ajuda-farum@gmail.com">ajuda-farum@gmail.com</a></p>
-          <img src="./assets/img/no-results.png" alt="">
-        </div>
-      </article>
     </div>
 
-    <footer>
-      <p>FARO
-        <i class="dog-nose">
-        </i>
-      </p>
-      <p>Todos os direitos reservados.</p>
-    </footer>
 
-  </div>
-
-
-  <script src="./farum.js"></script>
+    <script src="./btn-mobile.js"></script>
 </body>
 
 </html>
