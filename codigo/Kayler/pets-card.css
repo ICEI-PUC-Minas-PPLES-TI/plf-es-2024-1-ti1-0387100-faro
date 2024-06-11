@@ -97,6 +97,11 @@ body {
     height: 80px;
 }
 
+.day:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
 .day, .day-header {
     font-family: Montserrat;
     color: #ffffff;
@@ -156,6 +161,11 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 20px; 
     margin-bottom: 20px;
+}
+
+.card:hover{
+    transform: scale(1.02);
+    cursor: pointer;
 }
 
 hr {
