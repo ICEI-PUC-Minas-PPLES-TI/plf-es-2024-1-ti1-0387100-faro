@@ -80,22 +80,22 @@
 
           <h2 class="title">Agenda</h2>
 
-          <div>
+          <div id="estrutura-agenda">
 
             <div class="cartao-agendado">
               <span>Data</span>
-              <p>Modalidade?</p>
               <span>Horário</span>
+              <p>Modalidade</p>
               <span>Pet</span>
+              <div class="acao">Ação
+              </div>
+
             </div>
-            <div class="cartao-agendado">
-              <span>17/08</span>
-              <p>Checkup Olie</p>
-              <span>08:00h</span>
-              <span>Pet:</span>
-            </div>
+
           </div>
-          <button>cadastrar compromisso</button>
+
+
+          <button class="abrirModal">cadastrar compromisso</button>
 
 
         </main>
@@ -104,11 +104,11 @@
 
       <section class="cartao-cadastro-modal">
         <button class="fecharModal">fechar</button>
-        <form>
+        <form id="formulario">
 
           <div class="cartao-cadastro-conteudo">
-            <div>
-              <h3>O que deseja cadastrar?</h3>
+            <!-- <div>
+
 
               <button>
                 <p>
@@ -122,34 +122,41 @@
                   Vacina
                 </p>
               </button>
-            </div>
+            </div> -->
 
             <div>
+              <label for="modalidade">O que deseja cadastrar?</label>
+              <input type="text" id="modalidade" class="modal-input" name="modalidade">
+
+
               <div>
-                <label for="">Para qual pet?</label>
-                <input type="text">
+                <label for="nomePet">Para qual pet?</label>
+                <input type="text" id="nomePet" class="modal-input" name="nomePet">
               </div>
 
               <div class="formData">
+
                 <div>
                   <label for="data">Data:</label>
-                  <input type="date" id="data" name="data">
+                  <input type="date" id="data" class="modal-input" name="data">
                 </div>
                 <div>
                   <label for="hora">Hora:</label>
-                  <input type="time" id="hora" name="hora">
+                  <input type="time" id="hora" class="modal-input" name="hora">
                 </div>
               </div>
 
               <div>
                 <label for="local">Local</label>
-                <input type="text">
+                <input type="text" id="local" class="modal-input" name="local">
               </div>
 
             </div>
           </div>
 
-          <button>Cadastrar</button>
+          <button id="cadastrarCompromisso">Cadastrar</button>
+          <button id="deletarCompromisso">deletar</button>
+
         </form>
       </section>
 
