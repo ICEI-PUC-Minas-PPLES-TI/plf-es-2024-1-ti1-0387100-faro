@@ -1,5 +1,10 @@
+#cartaoVacina .title {
+  text-align: left;
+}
+
 .cartao-card-container {
-  padding: 10rem;
+  padding: 10rem 10rem 5rem 10rem;
+  /* padding: 10rem; */
 }
 
 .cartao-content {
@@ -9,23 +14,89 @@
   position: relative;
 }
 
-#cartao-modalidades {
-  position: absolute;
-  top: -2.2rem;
-  left: 0;
-  display: flex;
-  /* gap: 2rem; */
-}
-
-#cartao-modalidades span {
-  /* padding: 2rem; */
-  border: 1px solid rgba(0, 0, 0, 0.178);
-  padding: 5px 10px;
-}
-
 .cartao-agendado {
   /* display: flex; */
   /* justify-content: space-between; */
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+}
+
+.main-container {
+  /* position: relative; */
+}
+
+.cartao-cadastro-modal {
+  /* display: none; */
+  padding-inline: 10rem;
+  width: 900px;
+  position: fixed;
+  top: 4rem;
+  z-index: 1;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.cartao-cadastro-modal form {
+  padding: 2rem;
+  /* border: 1px solid gold; */
+  background-color: #f1f1f1;
+  height: 400px;
+  border-radius: 0.3125rem;
+}
+
+.cartao-cadastro-conteudo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  justify-content: space-between;
+  position: relative;
+}
+
+.cartao-cadastro-conteudo label {
+  display: block;
+  margin-top: 0.5rem;
+  margin-bottom: 0.2rem;
+}
+
+.cartao-cadastro-conteudo div:first-child button {
+  background-color: palegoldenrod;
+  padding: 0.5rem 1rem;
+}
+
+.cartao-cadastro-conteudo input {
+  border: 1px solid purple;
+  border-radius: 0.3125rem;
+  padding: 0.5rem;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.formData {
+  display: flex;
+  gap: 2rem;
+}
+
+.formData input {
+  width: initial;
+}
+
+.cartao-cadastro-conteudo input:hover {
+  cursor: pointer;
+}
+
+.cartao-cadastro-conteudo > button {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 2rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid grey;
+  border-radius: 0.3125rem;
+  cursor: pointer;
+  text-align: center;
+}
+
+.active {
+  display: block;
 }
