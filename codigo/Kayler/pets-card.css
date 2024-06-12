@@ -59,6 +59,42 @@ body {
     height: 100%;
 }
 
+#calendar-header {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+#calendar-header button {
+    background-color: #643F92;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#calendar-header span {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+span, button{
+    font-family: Montserrat;
+    font-weight: 700;
+    margin-left: 25px;
+    margin-right: 25px;
+    padding: 15px;
+}
+
+button:hover{
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
 #calendar {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
@@ -83,9 +119,18 @@ body {
 
 #consultations-list {
     flex: 1;
-    max-width: 30%; 
-    overflow: auto;
-    margin-left: 100px;
+    margin-left: 80px;
+    max-width: 30%;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    max-height: 100%;
+}
+
+#consultations-list:hover {
+    cursor: pointer;
 }
 
 .day {

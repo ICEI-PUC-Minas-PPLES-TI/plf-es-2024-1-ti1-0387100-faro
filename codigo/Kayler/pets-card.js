@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', function() {
-    var petData = [
+    const petData = [
         {
             id: "123456",
             nome: "Rex",
             raca: "Labrador Retriever",
-            foto: "./assets/lost_and_found/rex.jpg", // Adicionando a URL da imagem
+            foto: "./assets/lost_and_found/rex.jpg",
             consultas_medicas: [
                 {
                     data: "2024-05-10",
@@ -45,8 +45,39 @@ document.addEventListener('DOMContentLoaded', function() {
                     endereco: "Rua dos Amigos, 987, Florianópolis, SC"
                 }
             ]
-        }
+        },
+        {
+            id: "987456",
+            nome: "Bolinha",
+            raca: "Golden Retriever",
+            foto: "./assets/lost_and_found/bolinha.jpg",
+            consultas_medicas: [
+                {
+                    data: "2024-07-13",
+                    local: "Veterinária Animal Feliz",
+                    endereco: "Avenida dos Pássaros, 321, Curitiba, PR"
+                },
+                {
+                    data: "2024-08-21",
+                    local: "Hospital PetCare",
+                    endereco: "Rua das Árvores, 654, Porto Alegre, RS"
+                },
+                {
+                    data: "2024-08-02",
+                    local: "Clínica Vida de Pet",
+                    endereco: "Rua dos Amigos, 987, Florianópolis, SC"
+                }
+            ]
+        },
     ];
+
+    let currentDate = new Date();
+
+    function updateMonthYearDisplay() {
+        const monthNames = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
+        const currentMonthEl = document.getElementById('current-month');
+        currentMonthEl.textContent = `${monthNames[currentDate.getMonth()]} ${currentDate.getFullYear()}`;
+    }
 
     function generateCalendar(year, month) {
         const calendarEl = document.getElementById('calendar');
@@ -54,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const daysOfWeek = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
 
-        // Adicionar cabeçalhos dos dias da semana
+        //Adiciona cabeçalhos dos dias da semana
         daysOfWeek.forEach(day => {
             const dayHeader = document.createElement('div');
             dayHeader.className = 'day-header';
@@ -65,26 +96,26 @@ document.addEventListener('DOMContentLoaded', function() {
         const firstDay = new Date(year, month).getDay();
         const daysInMonth = new Date(year, month + 1, 0).getDate();
 
-        // Criar dias vazios antes do primeiro dia do mês
+        //Cria dias vazios antes do primeiro dia do mês
         for (let i = 0; i < firstDay; i++) {
             const emptyCell = document.createElement('div');
             emptyCell.className = 'day';
             calendarEl.appendChild(emptyCell);
         }
 
-        // Criar os dias do mês
+        //Cria os dias do mês
         for (let day = 1; day <= daysInMonth; day++) {
             const dateStr = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
             const dayCell = document.createElement('div');
             dayCell.className = 'day';
             dayCell.innerText = day;
 
-            // Verificar se há uma consulta agendada para este dia
+            //Verifica se há uma consulta agendada para este dia
             const petWithConsultation = petData.find(pet => {
                 return pet.consultas_medicas.some(consulta => consulta.data === dateStr);
             });
 
-            // Se houver uma consulta, associar a imagem do pet a este dia
+            //Se houver uma consulta, associar a imagem do pet a este dia
             if (petWithConsultation) {
                 const petImage = document.createElement('img');
                 petImage.src = petWithConsultation.foto;
@@ -94,6 +125,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             calendarEl.appendChild(dayCell);
         }
+        updateMonthYearDisplay();
     }
 
     function renderConsultationsList() {
@@ -135,7 +167,16 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    const today = new Date();
-    generateCalendar(today.getFullYear(), today.getMonth());
+    document.getElementById('prev-month').addEventListener('click', () => {
+        currentDate.setMonth(currentDate.getMonth() - 1);
+        generateCalendar(currentDate.getFullYear(), currentDate.getMonth());
+    });
+
+    document.getElementById('next-month').addEventListener('click', () => {
+        currentDate.setMonth(currentDate.getMonth() + 1);
+        generateCalendar(currentDate.getFullYear(), currentDate.getMonth());
+    });
+
+    generateCalendar(currentDate.getFullYear(), currentDate.getMonth());
     renderConsultationsList();
 });
