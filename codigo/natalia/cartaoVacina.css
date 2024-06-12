@@ -18,15 +18,16 @@
   /* display: flex; */
   /* justify-content: space-between; */
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(6, 1fr);
 }
 
-.main-container {
-  /* position: relative; */
+.cartao-agendado #acao {
+  display: flex;
+  flex-direction: column;
 }
 
 .cartao-cadastro-modal {
-  /* display: none; */
+  display: none;
   padding-inline: 10rem;
   width: 900px;
   position: fixed;
