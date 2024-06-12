@@ -15,7 +15,7 @@
 
 <body>
 
-  <div>
+  <div id="cartaoVacina">
 
     <header>
       <div id="shoulder">
@@ -77,10 +77,6 @@
       <section class="cartao-card-container">
 
         <main class="cartao-content">
-          <div id="cartao-modalidades">
-            <span>Consultas</span>
-            <span>Vacinas</span>
-          </div>
 
           <h2 class="title">Agenda</h2>
 
@@ -99,8 +95,62 @@
               <span>Pet:</span>
             </div>
           </div>
+          <button>cadastrar compromisso</button>
+
 
         </main>
+      </section>
+
+
+      <section class="cartao-cadastro-modal">
+        <button class="fecharModal">fechar</button>
+        <form>
+
+          <div class="cartao-cadastro-conteudo">
+            <div>
+              <h3>O que deseja cadastrar?</h3>
+
+              <button>
+                <p>
+                  <img src="" alt="">
+                  Consulta
+                </p>
+              </button>
+
+              <button>
+                <p>
+                  Vacina
+                </p>
+              </button>
+            </div>
+
+            <div>
+              <div>
+                <label for="">Para qual pet?</label>
+                <input type="text">
+              </div>
+
+              <div class="formData">
+                <div>
+                  <label for="data">Data:</label>
+                  <input type="date" id="data" name="data">
+                </div>
+                <div>
+                  <label for="hora">Hora:</label>
+                  <input type="time" id="hora" name="hora">
+                </div>
+              </div>
+
+              <div>
+                <label for="local">Local</label>
+                <input type="text">
+              </div>
+
+            </div>
+          </div>
+
+          <button>Cadastrar</button>
+        </form>
       </section>
 
 
@@ -116,6 +166,9 @@
 
 
     <script src="./btn-mobile.js"></script>
+    <script src="./cartaoVacina.js"></script>
+
+  </div>
 </body>
 
 </html>
