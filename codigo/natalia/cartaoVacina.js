@@ -68,8 +68,17 @@ document.addEventListener("DOMContentLoaded", function () {
         hora: document.getElementById("hora").value,
         local: document.getElementById("local").value,
       };
-      criarCompromisso(compromisso);
-      fecharModal();
+      const index = document.getElementById("nomePet").dataset.index;
+      if (index == "new") {
+        criarCompromisso(compromisso);
+        atualizarAgenda();
+        fecharModal();
+      } else {
+        atualizarCompromisso(index, compromisso);
+        atualizarAgenda();
+        fecharModal();
+        console.log("editar");
+      }
     }
   };
 
@@ -107,10 +116,12 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("modalidade").value = compromisso.modalidade;
     document.getElementById("nomePet").value = compromisso.nomePet;
     mostrarModal();
+    document.getElementById("nomePet").dataset.index = compromisso.index;
   };
 
   const editarCompromisso = (index) => {
     const compromisso = lerCompromisso()[index];
+    compromisso.index = index;
     preencherInput(compromisso);
   };
 
@@ -120,7 +131,11 @@ document.addEventListener("DOMContentLoaded", function () {
       if (action == "editar") {
         editarCompromisso(index);
       } else {
-        console.log("deletando");
+        const resposta = confirm(`Deseja realmente excluir esse compromisso?`);
+        if (resposta) {
+          deletarCompromisso(index);
+          atualizarAgenda();
+        }
       }
     }
   };
