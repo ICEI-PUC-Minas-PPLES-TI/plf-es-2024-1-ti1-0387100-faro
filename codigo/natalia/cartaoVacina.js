@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const modal = document.querySelector(".cartao-cadastro-modal");
   const cadastrar = document.querySelector(".cartao-content .abrirModal");
   const sairModal = document.querySelector(".fecharModal");
+  const fundoOpaco = document.querySelector(".fundo-opaco");
 
   const tempCompromisso = {
     data: "11/06/2024",
@@ -16,11 +17,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function mostrarModal() {
     modal.classList.add("active");
+    fundoOpaco.classList.add("active");
   }
 
   function fecharModal() {
     limparEntradas();
     modal.classList.remove("active");
+    fundoOpaco.classList.remove("active");
   }
 
   const getLocalStorage = () =>
@@ -69,18 +72,20 @@ document.addEventListener("DOMContentLoaded", function () {
         local: document.getElementById("local").value,
       };
       const index = document.getElementById("nomePet").dataset.index;
-      if (index == "new") {
+      if (index === "new") {
         criarCompromisso(compromisso);
-        atualizarAgenda();
-        fecharModal();
       } else {
         atualizarCompromisso(index, compromisso);
-        atualizarAgenda();
-        fecharModal();
-        console.log("editar");
       }
+      atualizarAgenda();
+      fecharModal();
     }
   };
+
+  function primeiraLetraMaiuscula(str) {
+    // Altera apenas a primeira letra para maiúscula
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  }
 
   const criarLinha = (compromisso, index) => {
     const novaLinha = document.createElement("div");
@@ -88,13 +93,18 @@ document.addEventListener("DOMContentLoaded", function () {
     novaLinha.innerHTML = `
     <p>${compromisso.data}</p>
     <p>${compromisso.hora}</p>
-    <p>${compromisso.modalidade}</p>
-    <span>${compromisso.nomePet}</span>
-    <span>${compromisso.local}</span>
+    <p>${primeiraLetraMaiuscula(compromisso.modalidade)}</p>
+    <span>${primeiraLetraMaiuscula(compromisso.nomePet)}</span>
+    <span>${primeiraLetraMaiuscula(compromisso.local)}</span>
     <div class="acao">
-    <button type="button" id="editar-${index}">editar</button>
+    <button type="button" id="editar-${index}">
+    <img src="./assets/img/editing.png" alt=""
+    </button>
 
-    <button type="button" id="deletar-${index}">deletar</button>
+    <button type="button" id="deletar-${index}">
+    <img src="./assets/img/delete.png" alt=""
+    </button>
+    
     </div>
     `;
     document.getElementById("estrutura-agenda").appendChild(novaLinha);
@@ -118,7 +128,8 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("nomePet").value = compromisso.nomePet;
     document.getElementById("local").value = compromisso.local;
     mostrarModal();
-    document.getElementById("nomePet").dataset.index = compromisso.index;
+    document.getElementById("nomePet").dataset.index =
+      compromisso.index || "new"; // Define "new" se não houver index
   };
 
   const editarCompromisso = (index) => {
@@ -128,21 +139,31 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 
   const editarDeletar = (event) => {
-    if (event.target.type == "button") {
-      const [action, index] = event.target.id.split("-");
-      if (action == "editar") {
+    let target = event.target;
+
+    // util: ao colocar dois elementos e o evento de clique estiver no elemento pai, a condicao verifica a tag e se for ativa passa a execucao para o elemento pai
+    if (target.tagName === "IMG") {
+      target = target.parentElement;
+    }
+
+    if (target.tagName === "BUTTON") {
+      const [action, index] = target.id.split("-");
+      if (action === "editar") {
         editarCompromisso(index);
-      } else {
+      } else if (action === "deletar") {
         const resposta = confirm(`Deseja realmente excluir esse compromisso?`);
         if (resposta) {
           deletarCompromisso(index);
           atualizarAgenda();
         }
       }
+    } else if (target.id === "cadastrarCompromisso") {
+      adicionarCompromisso();
     }
   };
 
   atualizarAgenda();
+
   //eventos
 
   cadastrar.addEventListener("click", mostrarModal);
@@ -155,4 +176,36 @@ document.addEventListener("DOMContentLoaded", function () {
   document
     .querySelector("#estrutura-agenda")
     .addEventListener("click", editarDeletar);
+
+  // Função para normalizar strings
+  function normalizarString(str) {
+    return str
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .toLowerCase();
+  }
+
+  // Filtro de busca
+  document
+    .getElementById("inputBusca")
+    .addEventListener("input", function (event) {
+      const procurarTermo = normalizarString(event.target.value);
+      const db_compromisso = getLocalStorage();
+      const compromissosFiltrados = db_compromisso.filter((compromisso) => {
+        // Verifica se o termo de busca contém pelo menos dois números
+        const termoContemDoisNumeros =
+          (procurarTermo.match(/\d/g) || []).length >= 2;
+        return (
+          normalizarString(compromisso.modalidade).includes(procurarTermo) ||
+          normalizarString(compromisso.nomePet).includes(procurarTermo) ||
+          normalizarString(compromisso.local).includes(procurarTermo) ||
+          // Se o termo contiver pelo menos dois números, verifica se eles estão na data ou hora
+          (termoContemDoisNumeros &&
+            (compromisso.data.includes(procurarTermo) ||
+              compromisso.hora.includes(procurarTermo)))
+        );
+      });
+      limparAgenda();
+      compromissosFiltrados.forEach(criarLinha);
+    });
 });

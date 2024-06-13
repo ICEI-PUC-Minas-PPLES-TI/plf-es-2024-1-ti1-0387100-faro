@@ -216,7 +216,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
       }
 
-      // fecha todas as respostas abertas a medida que filtro
+      // fecha todas as respostas abertas a medida que filtra
       const respostas = listaPerguntas.querySelectorAll("dd");
       respostas.forEach((resposta) => {
         resposta.classList.remove("ativa");

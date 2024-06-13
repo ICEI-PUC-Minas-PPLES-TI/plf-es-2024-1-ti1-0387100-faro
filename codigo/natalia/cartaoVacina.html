@@ -7,10 +7,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./farum.css">
+  <!-- <link rel="stylesheet" href="./farum.css"> -->
   <link rel="stylesheet" href="./cartaoVacina.css">
 
-  <title>Fárum</title>
+  <title>Faro - Cartão Vacina</title>
 </head>
 
 <body>
@@ -78,7 +78,20 @@
 
         <main class="cartao-content">
 
-          <h2 class="title">Agenda</h2>
+          <h2 class="title">Cartão Pet</h2>
+
+          <div id="filtroAgenda">
+            <div>
+              <img src="./assets/img/search-interface-symbol.png" alt="">
+              <input type="text" id="inputBusca" placeholder="Procurando por algum compromisso em específico?">
+              <button class="abrirModal"><img src="./assets/img/plus.png" alt=""></button>
+            </div>
+
+          </div>
+
+
+
+
 
           <div id="estrutura-agenda">
 
@@ -93,79 +106,62 @@
               </div>
 
             </div>
-            <!-- 
-            <div class="cartao-agendado">
-
-            </div> -->
 
           </div>
-
-
-          <button class="abrirModal">cadastrar compromisso</button>
-
 
         </main>
       </section>
 
 
       <section class="cartao-cadastro-modal">
-        <button class="fecharModal">fechar</button>
         <form id="formulario">
 
+          <button class="fecharModal">
+            <img src="./assets/img/close_24dp_FILL0_wght400_GRAD0_opsz24.svg" alt="">
+          </button>
+
           <div class="cartao-cadastro-conteudo">
-            <!-- <div>
 
 
-              <button>
-                <p>
-                  <img src="" alt="">
-                  Consulta
-                </p>
-              </button>
-
-              <button>
-                <p>
-                  Vacina
-                </p>
-              </button>
-            </div> -->
 
             <div>
-              <label for="modalidade">O que deseja cadastrar?</label>
-              <input type="text" id="modalidade" class="modal-input" name="modalidade" required>
 
+              <div class="formData">
+                <label for="data">Data:</label>
+                <input type="date" id="data" class="modal-input" name="data" required>
+              </div>
+
+              <div class="formHora">
+                <label for="hora">Hora:</label>
+                <input type="time" id="hora" class="modal-input" name="hora" required>
+              </div>
+
+              <div>
+                <label for="modalidade">O que deseja cadastrar?</label>
+                <input type="text" id="modalidade" class="modal-input" name="modalidade" placeholder="vacinas, consultas, vermífugos..." required>
+              </div>
 
               <div>
                 <label for="nomePet">Para qual pet?</label>
                 <input type="text" id="nomePet" data-index="new" class="modal-input" name="nomePet" required>
               </div>
 
-              <div class="formData">
-
-                <div>
-                  <label for="data">Data:</label>
-                  <input type="date" id="data" class="modal-input" name="data" required>
-                </div>
-                <div>
-                  <label for="hora">Hora:</label>
-                  <input type="time" id="hora" class="modal-input" name="hora" required>
-                </div>
-              </div>
 
               <div>
-                <label for="local">Local</label>
-                <input type="text" id="local" class="modal-input" name="local" required>
+                <label for=" local">Local</label>
+                <input type="text" id="local" class="modal-input" name="local" placeholder="casa, end do veterinário...">
               </div>
 
             </div>
+
           </div>
 
-          <button id="cadastrarCompromisso">Cadastrar</button>
-          <button id="deletarCompromisso">deletar</button>
+          <button id="cadastrarCompromisso">Salvar</button>
+
+          <!-- <button id="deletarCompromisso">deletar</button> -->
 
         </form>
       </section>
-
 
       <footer>
         <p>FARO
@@ -177,6 +173,7 @@
 
     </div>
 
+    <div class="fundo-opaco"></div>
 
     <script src="./btn-mobile.js"></script>
     <script src="./cartaoVacina.js"></script>
