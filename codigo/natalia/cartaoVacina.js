@@ -90,6 +90,7 @@ document.addEventListener("DOMContentLoaded", function () {
     <p>${compromisso.hora}</p>
     <p>${compromisso.modalidade}</p>
     <span>${compromisso.nomePet}</span>
+    <span>${compromisso.local}</span>
     <div class="acao">
     <button type="button" id="editar-${index}">editar</button>
 
@@ -115,6 +116,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("hora").value = compromisso.hora;
     document.getElementById("modalidade").value = compromisso.modalidade;
     document.getElementById("nomePet").value = compromisso.nomePet;
+    document.getElementById("local").value = compromisso.local;
     mostrarModal();
     document.getElementById("nomePet").dataset.index = compromisso.index;
   };
