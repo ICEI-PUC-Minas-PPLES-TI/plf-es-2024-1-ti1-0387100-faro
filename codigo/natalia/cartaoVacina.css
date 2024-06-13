@@ -212,7 +212,7 @@ header {
   width: 80%;
   outline: none;
   transition: all 0.2s ease-in-out;
-  padding-left: 2rem;
+  padding-left: 2.5rem;
 }
 
 #filtroAgenda input:focus {
@@ -221,9 +221,11 @@ header {
   box-shadow: 0 0 0 2px plum;
 }
 
-#filtroAgenda div img {
-  width: 1.5rem;
+#filtroAgenda div > img {
+  width: 1.3rem;
   position: absolute;
+  left: 3.625rem;
+  filter: invert(0.5);
 }
 
 #estrutura-agenda {
@@ -379,7 +381,7 @@ header {
   padding: 0.5rem 1rem;
   position: absolute;
   right: 2rem;
-  bottom: 3rem;
+  bottom: 2rem;
   transition: all 0.2s;
   background-color: #fff;
 }
@@ -395,9 +397,13 @@ header {
 .cartao-cadastro-conteudo > div {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2rem;
+  gap: 1rem 2rem;
   justify-content: space-between;
   position: relative;
+}
+
+.cartao-cadastro-conteudo > div div:nth-child(5) {
+  grid-column: 1 / -1;
 }
 
 .cartao-cadastro-conteudo label {
@@ -461,6 +467,30 @@ header {
 
 .active {
   display: block;
+}
+
+.modalidade-botao {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.modalidade-botao button {
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  outline: none;
+  border: 1px solid purple;
+  border-radius: 1rem;
+  background-color: #f2f6f5;
+  border: 1px solid rgba(128, 128, 128, 0.281);
+  transition: all 0.2s ease-in-out;
+}
+
+.modalidade-botao button:hover,
+.modalidade-botao button:focus {
+  background-color: #fff;
+  border-color: purple;
+  box-shadow: 0 0 0 2px plum;
 }
 
 /* footer */
