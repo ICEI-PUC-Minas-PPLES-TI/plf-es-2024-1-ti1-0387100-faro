@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // variaveis globais
+  // variáveis globais
   const modal = document.querySelector(".cartao-cadastro-modal");
   const cadastrar = document.querySelector(".cartao-content .abrirModal");
   const sairModal = document.querySelector(".fecharModal");
@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
     local: "Puc-Vet",
   };
 
-  //funcoes
+  //funções
 
   function mostrarModal() {
     modal.classList.add("active");
@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
     setLocalStorage(db_compromisso);
   };
 
-  // interacao do crud
+  // interação do CRUD
   const limparEntradas = () => {
     const entradas = document.querySelectorAll(".modal-input");
     entradas.forEach((entrada) => (entrada.value = ""));
@@ -83,7 +83,6 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 
   function primeiraLetraMaiuscula(str) {
-    // Altera apenas a primeira letra para maiúscula
     return str.charAt(0).toUpperCase() + str.slice(1);
   }
 
@@ -98,13 +97,11 @@ document.addEventListener("DOMContentLoaded", function () {
     <span>${primeiraLetraMaiuscula(compromisso.local)}</span>
     <div class="acao">
     <button type="button" id="editar-${index}">
-    <img src="./assets/img/editing.png" alt=""
+    <img src="./assets/img/editing.png" alt="editar">
     </button>
-
     <button type="button" id="deletar-${index}">
-    <img src="./assets/img/delete.png" alt=""
+    <img src="./assets/img/delete.png" alt="deletar">
     </button>
-    
     </div>
     `;
     document.getElementById("estrutura-agenda").appendChild(novaLinha);
@@ -129,7 +126,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("local").value = compromisso.local;
     mostrarModal();
     document.getElementById("nomePet").dataset.index =
-      compromisso.index || "new"; // Define "new" se não houver index
+      compromisso.index || "new";
   };
 
   const editarCompromisso = (index) => {
@@ -141,7 +138,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const editarDeletar = (event) => {
     let target = event.target;
 
-    // util: ao colocar dois elementos e o evento de clique estiver no elemento pai, a condicao verifica a tag e se for ativa passa a execucao para o elemento pai
     if (target.tagName === "IMG") {
       target = target.parentElement;
     }
@@ -164,15 +160,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
   atualizarAgenda();
 
-  //eventos
-
+  // eventos
   cadastrar.addEventListener("click", mostrarModal);
   sairModal.addEventListener("click", fecharModal);
 
   document
     .getElementById("cadastrarCompromisso")
     .addEventListener("click", adicionarCompromisso);
-
   document
     .querySelector("#estrutura-agenda")
     .addEventListener("click", editarDeletar);
@@ -192,14 +186,12 @@ document.addEventListener("DOMContentLoaded", function () {
       const procurarTermo = normalizarString(event.target.value);
       const db_compromisso = getLocalStorage();
       const compromissosFiltrados = db_compromisso.filter((compromisso) => {
-        // Verifica se o termo de busca contém pelo menos dois números
         const termoContemDoisNumeros =
           (procurarTermo.match(/\d/g) || []).length >= 2;
         return (
           normalizarString(compromisso.modalidade).includes(procurarTermo) ||
           normalizarString(compromisso.nomePet).includes(procurarTermo) ||
           normalizarString(compromisso.local).includes(procurarTermo) ||
-          // Se o termo contiver pelo menos dois números, verifica se eles estão na data ou hora
           (termoContemDoisNumeros &&
             (compromisso.data.includes(procurarTermo) ||
               compromisso.hora.includes(procurarTermo)))
@@ -208,4 +200,13 @@ document.addEventListener("DOMContentLoaded", function () {
       limparAgenda();
       compromissosFiltrados.forEach(criarLinha);
     });
+
+  // Adicionando funcionalidade aos botões
+  const modalidadeBotao = document.querySelectorAll(".modalidade-botao button");
+  modalidadeBotao.forEach((button) => {
+    button.addEventListener("click", function () {
+      const modalidadeInput = document.getElementById("modalidade");
+      modalidadeInput.value = this.getAttribute("data-modalidade");
+    });
+  });
 });

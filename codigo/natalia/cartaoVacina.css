@@ -336,7 +336,7 @@ header {
 /* modal */
 
 .cartao-cadastro-modal {
-  /* display: none; */
+  display: none;
   padding-inline: 10rem;
   width: 900px;
   position: fixed;
@@ -397,7 +397,7 @@ header {
 .cartao-cadastro-conteudo > div {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2rem;
+  gap: 1rem 2rem;
   justify-content: space-between;
   position: relative;
 }
@@ -470,11 +470,13 @@ header {
 }
 
 .modalidade-botao {
+  margin-top: 1rem;
   display: flex;
   gap: 1rem;
 }
 
 .modalidade-botao button {
+  cursor: pointer;
   padding: 0.5rem 1rem;
   outline: none;
   border: 1px solid purple;
@@ -484,7 +486,8 @@ header {
   transition: all 0.2s ease-in-out;
 }
 
-.modalidade-botao button:hover {
+.modalidade-botao button:hover,
+.modalidade-botao button:focus {
   background-color: #fff;
   border-color: purple;
   box-shadow: 0 0 0 2px plum;
