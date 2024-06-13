@@ -115,12 +115,28 @@ document.addEventListener('DOMContentLoaded', function() {
                 return pet.consultas_medicas.some(consulta => consulta.data === dateStr);
             });
 
-            //Se houver uma consulta, associar a imagem do pet a este dia
+            //Se houver uma consulta associa a imagem do pet a este dia
             if (petWithConsultation) {
                 const petImage = document.createElement('img');
                 petImage.src = petWithConsultation.foto;
                 petImage.alt = petWithConsultation.nome;
                 dayCell.appendChild(petImage);
+
+                //Criação do tooltip
+                const consultas = petWithConsultation.consultas_medicas.filter(consulta => consulta.data === dateStr);
+                const tooltipContent = consultas.map(consulta => `<strong>${consulta.local}</strong><br>${consulta.endereco}`).join('<br>');
+                dayCell.dataset.tooltip = tooltipContent;
+
+                dayCell.addEventListener('mouseenter', function() {
+                    const tooltip = document.getElementById('tooltip');
+                    tooltip.innerHTML = dayCell.dataset.tooltip;
+                    tooltip.style.display = 'block';
+                });
+
+                dayCell.addEventListener('mouseleave', function() {
+                    const tooltip = document.getElementById('tooltip');
+                    tooltip.style.display = 'none';
+                });
             }
 
             calendarEl.appendChild(dayCell);
@@ -176,6 +192,12 @@ document.addEventListener('DOMContentLoaded', function() {
         currentDate.setMonth(currentDate.getMonth() + 1);
         generateCalendar(currentDate.getFullYear(), currentDate.getMonth());
     });
+
+    //Balão detalhes
+    const tooltip = document.createElement('div');
+    tooltip.id = 'tooltip';
+    tooltip.className = 'tooltip';
+    document.body.appendChild(tooltip);
 
     generateCalendar(currentDate.getFullYear(), currentDate.getMonth());
     renderConsultationsList();
