@@ -82,15 +82,21 @@
 
           <div id="estrutura-agenda">
 
-            <div class="cartao-agendado">
+            <div class="cartao-agendando-base">
               <span>Data</span>
               <span>Horário</span>
               <p>Modalidade</p>
               <span>Pet</span>
+              <span>Localidade</span>
+
               <div class="acao">Ação
               </div>
 
             </div>
+            <!-- 
+            <div class="cartao-agendado">
+
+            </div> -->
 
           </div>
 
@@ -126,29 +132,29 @@
 
             <div>
               <label for="modalidade">O que deseja cadastrar?</label>
-              <input type="text" id="modalidade" class="modal-input" name="modalidade">
+              <input type="text" id="modalidade" class="modal-input" name="modalidade" required>
 
 
               <div>
                 <label for="nomePet">Para qual pet?</label>
-                <input type="text" id="nomePet" data-index="new" class="modal-input" name="nomePet">
+                <input type="text" id="nomePet" data-index="new" class="modal-input" name="nomePet" required>
               </div>
 
               <div class="formData">
 
                 <div>
                   <label for="data">Data:</label>
-                  <input type="date" id="data" class="modal-input" name="data">
+                  <input type="date" id="data" class="modal-input" name="data" required>
                 </div>
                 <div>
                   <label for="hora">Hora:</label>
-                  <input type="time" id="hora" class="modal-input" name="hora">
+                  <input type="time" id="hora" class="modal-input" name="hora" required>
                 </div>
               </div>
 
               <div>
                 <label for="local">Local</label>
-                <input type="text" id="local" class="modal-input" name="local">
+                <input type="text" id="local" class="modal-input" name="local" required>
               </div>
 
             </div>
