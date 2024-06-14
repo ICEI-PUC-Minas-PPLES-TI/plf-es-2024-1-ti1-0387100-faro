@@ -179,7 +179,7 @@ document.addEventListener("DOMContentLoaded", function () {
       .toLowerCase();
   }
 
-  // filtro de busca
+  // Filtro de busca
   document
     .getElementById("inputBusca")
     .addEventListener("input", function (event) {
@@ -201,7 +201,7 @@ document.addEventListener("DOMContentLoaded", function () {
       compromissosFiltrados.forEach(criarLinha);
     });
 
-  // botoes modalidade
+  // Adicionando funcionalidade aos botões
   const modalidadeBotao = document.querySelectorAll(".modalidade-botao button");
   modalidadeBotao.forEach((button) => {
     button.addEventListener("click", function () {

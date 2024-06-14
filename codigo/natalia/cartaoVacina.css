@@ -336,7 +336,7 @@ header {
 /* modal */
 
 .cartao-cadastro-modal {
-  /* display: none; */
+  display: none;
   padding-inline: 10rem;
   width: 900px;
   position: fixed;
