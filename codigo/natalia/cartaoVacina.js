@@ -58,12 +58,56 @@ document.addEventListener("DOMContentLoaded", function () {
     entradas.forEach((entrada) => (entrada.value = ""));
   };
 
-  validezEntradas = () => {
-    return document.getElementById("formulario").reportValidity();
-  };
+  // validezEntradas = () => {
+  //   return document.getElementById("formulario").reportValidity();
+  // };
 
-  const adicionarCompromisso = () => {
-    if (validezEntradas()) {
+  function validarEntradas() {
+    const nomePetInput = document.getElementById("nomePet");
+    const modalidadeInput = document.getElementById("modalidade");
+    const dataInput = document.getElementById("data");
+    const horaInput = document.getElementById("hora");
+    const localInput = document.getElementById("local");
+
+    const nomePet = nomePetInput.value.trim();
+    const modalidade = modalidadeInput.value.trim();
+    const data = dataInput.value.trim();
+    const hora = horaInput.value.trim();
+    const local = localInput.value.trim();
+
+    // Verifica se os campos estão vazios
+    if (data === "") {
+      dataInput.focus();
+      return false;
+    }
+    if (hora === "") {
+      horaInput.focus();
+      return false;
+    }
+    if (nomePet === "") {
+      nomePetInput.focus();
+      return false;
+    }
+    if (local === "") {
+      localInput.focus();
+      return false;
+    }
+    if (modalidade === "") {
+      modalidadeInput.focus();
+      return false;
+    }
+
+    return true;
+  }
+
+  function formatarDataBrasileira(data) {
+    const [ano, mes, dia] = data.split("-");
+    return `${dia}/${mes}/${ano}`;
+  }
+
+  const adicionarCompromisso = (event) => {
+    event.preventDefault();
+    if (validarEntradas()) {
       const compromisso = {
         nomePet: document.getElementById("nomePet").value,
         modalidade: document.getElementById("modalidade").value,
@@ -88,9 +132,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const criarLinha = (compromisso, index) => {
     const novaLinha = document.createElement("div");
+    const exibicaoData = formatarDataBrasileira(compromisso.data);
     novaLinha.classList.add("cartao-agendado");
     novaLinha.innerHTML = `
-    <p>${compromisso.data}</p>
+    <p>${exibicaoData}</p>
     <p>${compromisso.hora}</p>
     <p>${primeiraLetraMaiuscula(compromisso.modalidade)}</p>
     <span>${primeiraLetraMaiuscula(compromisso.nomePet)}</span>
@@ -131,7 +176,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const editarCompromisso = (index) => {
     const compromisso = lerCompromisso()[index];
-    compromisso.index = index;
+    // compromisso.index = index;
     preencherInput(compromisso);
   };
 
