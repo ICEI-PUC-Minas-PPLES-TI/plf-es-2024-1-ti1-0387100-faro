@@ -176,7 +176,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const editarCompromisso = (index) => {
     const compromisso = lerCompromisso()[index];
-    // compromisso.index = index;
+    compromisso.index = index;
     preencherInput(compromisso);
   };
 
