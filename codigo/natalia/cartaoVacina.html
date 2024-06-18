@@ -7,6 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap" rel="stylesheet">
   <!-- <link rel="stylesheet" href="./farum.css"> -->
   <link rel="stylesheet" href="./cartaoVacina.css">
 
@@ -150,12 +151,12 @@
               </div>
 
               <div>
-                <label for="modalidade">O que deseja cadastrar?</label>
+                <label for="modalidade">O que deseja cadastrar? <span class="restricao">max: 15 caracteres</span></label>
                 <input type="text" id="modalidade" class="modal-input" name="modalidade" placeholder="vacinas, consultas, vermífugos...">
                 <div class="modalidade-botao">
-                  <button type="button" data-modalidade="consulta">consulta</button>
-                  <button type="button" data-modalidade="vacina">vacina</button>
-                  <button type="button" data-modalidade="vermífugo">vermífugo</button>
+                  <button type="button" data-modalidade="Consulta">Consulta</button>
+                  <button type="button" data-modalidade="Vacina">Vacina</button>
+                  <button type="button" data-modalidade="Vermífugo">Vermífugo</button>
                 </div>
               </div>
 

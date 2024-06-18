@@ -286,6 +286,7 @@ header {
   padding: 1rem;
   transition: all 0.1s;
   border: 1px solid transparent;
+  text-align: center;
 }
 
 .cartao-agendado:nth-child(odd) {
@@ -335,6 +336,12 @@ header {
 
 /* modal */
 
+.restricao {
+  color: rgba(39, 39, 39, 0.281);
+  padding-left: 2rem;
+  font-style: italic;
+}
+
 .cartao-cadastro-modal {
   display: none;
   padding-inline: 10rem;
@@ -347,7 +354,7 @@ header {
 }
 
 .cartao-cadastro-modal form {
-  padding: 2rem;
+  padding: 2rem 2rem 6rem 2rem;
   background-color: #fff;
   border-radius: 0.3125rem;
   position: relative;
@@ -492,6 +499,11 @@ header {
   border-color: purple;
   box-shadow: 0 0 0 2px plum;
 }
+
+/* .campoPreenchido input {
+  border-color: green;
+  box-shadow: 0 0 0 2px greenyellow;
+} */
 
 /* footer */
 

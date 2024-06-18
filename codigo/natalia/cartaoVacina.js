@@ -1,17 +1,15 @@
 document.addEventListener("DOMContentLoaded", function () {
   // variáveis globais
+  const obterValorInput = (id) => document.getElementById(id).value;
   const modal = document.querySelector(".cartao-cadastro-modal");
   const cadastrar = document.querySelector(".cartao-content .abrirModal");
   const sairModal = document.querySelector(".fecharModal");
-  const fundoOpaco = document.querySelector(".fundo-opaco");
 
-  const tempCompromisso = {
-    data: "11/06/2024",
-    modalidade: "checkup",
-    horario: "09h",
-    pet: "Nino",
-    local: "Puc-Vet",
-  };
+  const fundoOpaco = document.querySelector(".fundo-opaco");
+  const inputFiltro = document.getElementById("inputBusca");
+
+  const modalidadeBotao = document.querySelectorAll(".modalidade-botao button");
+  const modalidadeInput = document.getElementById("modalidade");
 
   //funções
 
@@ -26,12 +24,13 @@ document.addEventListener("DOMContentLoaded", function () {
     fundoOpaco.classList.remove("active");
   }
 
+  // CRUD
   const getLocalStorage = () =>
     JSON.parse(localStorage.getItem("db_compromisso")) ?? [];
+
   const setLocalStorage = (db_compromisso) =>
     localStorage.setItem("db_compromisso", JSON.stringify(db_compromisso));
 
-  // CRUD
   const criarCompromisso = (compromisso) => {
     const db_compromisso = getLocalStorage();
     db_compromisso.push(compromisso);
@@ -58,43 +57,71 @@ document.addEventListener("DOMContentLoaded", function () {
     entradas.forEach((entrada) => (entrada.value = ""));
   };
 
-  // validezEntradas = () => {
-  //   return document.getElementById("formulario").reportValidity();
-  // };
+  // function validarEntradas() {
+  //   const nomePetInput = document.getElementById("nomePet");
+  //   const modalidadeInput = document.getElementById("modalidade");
+  //   const dataInput = document.getElementById("data");
+  //   const horaInput = document.getElementById("hora");
+  //   const localInput = document.getElementById("local");
+
+  //   const nomePet = nomePetInput.value.trim();
+  //   const modalidade = modalidadeInput.value.trim();
+  //   const data = dataInput.value.trim();
+  //   const hora = horaInput.value.trim();
+  //   const local = localInput.value.trim();
+
+  //   if (data === "") {
+  //     dataInput.focus();
+  //     return false;
+  //   }
+  //   if (hora === "") {
+  //     horaInput.focus();
+  //     return false;
+  //   }
+  //   if (nomePet === "") {
+  //     nomePetInput.focus();
+  //     return false;
+  //   }
+  //   if (local === "") {
+  //     localInput.focus();
+  //     return false;
+  //   }
+  //   if (modalidade === "") {
+  //     modalidadeInput.focus();
+  //     return false;
+  //   }
+
+  //   const tamanhoMaxModalidade = 15;
+  //   if (modalidade.length > tamanhoMaxModalidade) {
+  //     modalidadeInput.focus();
+  //     return false;
+  //   }
+
+  //   return true;
+  // }
 
   function validarEntradas() {
-    const nomePetInput = document.getElementById("nomePet");
-    const modalidadeInput = document.getElementById("modalidade");
-    const dataInput = document.getElementById("data");
-    const horaInput = document.getElementById("hora");
-    const localInput = document.getElementById("local");
+    const campos = [
+      { id: "data", nome: "Data" },
+      { id: "hora", nome: "Hora" },
+      { id: "nomePet", nome: "Nome do Pet" },
+      { id: "local", nome: "Local" },
+      { id: "modalidade", nome: "Modalidade", maxLength: 15 },
+    ];
 
-    const nomePet = nomePetInput.value.trim();
-    const modalidade = modalidadeInput.value.trim();
-    const data = dataInput.value.trim();
-    const hora = horaInput.value.trim();
-    const local = localInput.value.trim();
+    for (const campo of campos) {
+      const input = document.getElementById(campo.id);
+      const valor = input.value.trim();
 
-    // Verifica se os campos estão vazios
-    if (data === "") {
-      dataInput.focus();
-      return false;
-    }
-    if (hora === "") {
-      horaInput.focus();
-      return false;
-    }
-    if (nomePet === "") {
-      nomePetInput.focus();
-      return false;
-    }
-    if (local === "") {
-      localInput.focus();
-      return false;
-    }
-    if (modalidade === "") {
-      modalidadeInput.focus();
-      return false;
+      if (valor === "") {
+        input.focus();
+        return false;
+      }
+
+      if (campo.maxLength && valor.length > campo.maxLength) {
+        input.focus();
+        return false;
+      }
     }
 
     return true;
@@ -105,22 +132,45 @@ document.addEventListener("DOMContentLoaded", function () {
     return `${dia}/${mes}/${ano}`;
   }
 
+  // const adicionarCompromisso = (event) => {
+  //   event.preventDefault();
+  //   if (validarEntradas()) {
+  //     const compromisso = {
+  //       nomePet: document.getElementById("nomePet").value,
+  //       modalidade: document.getElementById("modalidade").value,
+  //       data: document.getElementById("data").value,
+  //       hora: document.getElementById("hora").value,
+  //       local: document.getElementById("local").value,
+  //     };
+  //     const index = document.getElementById("nomePet").dataset.index;
+  //     if (index === "new") {
+  //       criarCompromisso(compromisso);
+  //     } else {
+  //       atualizarCompromisso(index, compromisso);
+  //     }
+  //     atualizarAgenda();
+  //     fecharModal();
+  //   }
+  // };
+
   const adicionarCompromisso = (event) => {
     event.preventDefault();
     if (validarEntradas()) {
       const compromisso = {
-        nomePet: document.getElementById("nomePet").value,
-        modalidade: document.getElementById("modalidade").value,
-        data: document.getElementById("data").value,
-        hora: document.getElementById("hora").value,
-        local: document.getElementById("local").value,
+        nomePet: obterValorInput("nomePet"),
+        modalidade: obterValorInput("modalidade"),
+        data: obterValorInput("data"),
+        hora: obterValorInput("hora"),
+        local: obterValorInput("local"),
       };
+
       const index = document.getElementById("nomePet").dataset.index;
       if (index === "new") {
         criarCompromisso(compromisso);
       } else {
         atualizarCompromisso(index, compromisso);
       }
+
       atualizarAgenda();
       fecharModal();
     }
@@ -163,12 +213,30 @@ document.addEventListener("DOMContentLoaded", function () {
     db_compromisso.forEach(criarLinha);
   };
 
+  // const preencherInput = (compromisso) => {
+  //   document.getElementById("data").value = compromisso.data;
+  //   document.getElementById("hora").value = compromisso.hora;
+  //   document.getElementById("modalidade").value = compromisso.modalidade;
+  //   document.getElementById("nomePet").value = compromisso.nomePet;
+  //   document.getElementById("local").value = compromisso.local;
+  //   mostrarModal();
+  //   document.getElementById("nomePet").dataset.index =
+  //     compromisso.index || "new";
+  // };
+
   const preencherInput = (compromisso) => {
-    document.getElementById("data").value = compromisso.data;
-    document.getElementById("hora").value = compromisso.hora;
-    document.getElementById("modalidade").value = compromisso.modalidade;
-    document.getElementById("nomePet").value = compromisso.nomePet;
-    document.getElementById("local").value = compromisso.local;
+    const campos = [
+      { id: "data", valor: compromisso.data },
+      { id: "hora", valor: compromisso.hora },
+      { id: "modalidade", valor: compromisso.modalidade },
+      { id: "nomePet", valor: compromisso.nomePet },
+      { id: "local", valor: compromisso.local },
+    ];
+
+    campos.forEach((campo) => {
+      document.getElementById(campo.id).value = campo.valor;
+    });
+
     mostrarModal();
     document.getElementById("nomePet").dataset.index =
       compromisso.index || "new";
@@ -176,7 +244,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const editarCompromisso = (index) => {
     const compromisso = lerCompromisso()[index];
-    // compromisso.index = index;
+    compromisso.index = index;
     preencherInput(compromisso);
   };
 
@@ -205,18 +273,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   atualizarAgenda();
 
-  // eventos
-  cadastrar.addEventListener("click", mostrarModal);
-  sairModal.addEventListener("click", fecharModal);
-
-  document
-    .getElementById("cadastrarCompromisso")
-    .addEventListener("click", adicionarCompromisso);
-  document
-    .querySelector("#estrutura-agenda")
-    .addEventListener("click", editarDeletar);
-
-  // Função para normalizar strings
   function normalizarString(str) {
     return str
       .normalize("NFD")
@@ -224,34 +280,43 @@ document.addEventListener("DOMContentLoaded", function () {
       .toLowerCase();
   }
 
-  // Filtro de busca
-  document
-    .getElementById("inputBusca")
-    .addEventListener("input", function (event) {
-      const procurarTermo = normalizarString(event.target.value);
-      const db_compromisso = getLocalStorage();
-      const compromissosFiltrados = db_compromisso.filter((compromisso) => {
-        const termoContemDoisNumeros =
-          (procurarTermo.match(/\d/g) || []).length >= 2;
-        return (
-          normalizarString(compromisso.modalidade).includes(procurarTermo) ||
-          normalizarString(compromisso.nomePet).includes(procurarTermo) ||
-          normalizarString(compromisso.local).includes(procurarTermo) ||
-          (termoContemDoisNumeros &&
-            (compromisso.data.includes(procurarTermo) ||
-              compromisso.hora.includes(procurarTermo)))
-        );
-      });
-      limparAgenda();
-      compromissosFiltrados.forEach(criarLinha);
+  function filtrarBusca(event) {
+    const procurarTermo = normalizarString(event.target.value);
+    const db_compromisso = getLocalStorage();
+    const compromissosFiltrados = db_compromisso.filter((compromisso) => {
+      const termoContemDoisNumeros =
+        (procurarTermo.match(/\d/g) || []).length >= 2;
+      return (
+        normalizarString(compromisso.modalidade).includes(procurarTermo) ||
+        normalizarString(compromisso.nomePet).includes(procurarTermo) ||
+        normalizarString(compromisso.local).includes(procurarTermo) ||
+        (termoContemDoisNumeros &&
+          (compromisso.data.includes(procurarTermo) ||
+            compromisso.hora.includes(procurarTermo)))
+      );
     });
+    limparAgenda();
+    compromissosFiltrados.forEach(criarLinha);
+  }
 
-  // Adicionando funcionalidade aos botões
-  const modalidadeBotao = document.querySelectorAll(".modalidade-botao button");
-  modalidadeBotao.forEach((button) => {
-    button.addEventListener("click", function () {
-      const modalidadeInput = document.getElementById("modalidade");
-      modalidadeInput.value = this.getAttribute("data-modalidade");
+  function adicionarEventoModalidade(modalidadeBotao, modalidadeInput) {
+    modalidadeBotao.forEach((button) => {
+      button.addEventListener("click", function () {
+        modalidadeInput.value = this.getAttribute("data-modalidade");
+      });
     });
-  });
+  }
+
+  // eventos
+  inputFiltro.addEventListener("input", filtrarBusca);
+  cadastrar.addEventListener("click", mostrarModal);
+  sairModal.addEventListener("click", fecharModal);
+  adicionarEventoModalidade(modalidadeBotao, modalidadeInput);
+
+  document
+    .getElementById("cadastrarCompromisso")
+    .addEventListener("click", adicionarCompromisso);
+  document
+    .querySelector("#estrutura-agenda")
+    .addEventListener("click", editarDeletar);
 });
