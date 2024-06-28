@@ -61,30 +61,63 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // funcao para preencher o carrossel com os slides
     function acrescentarSlides(slides) {
+      const modal = document.querySelector(".farum-modal");
+      const scrollParaCima = document.querySelector(".scroll-para-cima");
       const carrossel = document.querySelector(".farum-carrosel");
       carrossel.innerHTML = ""; // Limpar qualquer conteúdo existente
 
       slides.forEach((slide, index) => {
-        const div = document.createElement("div");
-        div.classList.add("farum-card", "item");
+        // Criar o botão para envolver o slide
+        const button = document.createElement("button");
+        button.classList.add("farum-card", "item");
         if (index === 0) {
-          div.classList.add("current-item");
+          button.classList.add("current-item");
         }
 
-        div.innerHTML = `
-      <div class="farum-card-foto">
-        <img src="${slide.imagem}" alt="${slide.titulo}">
-      </div>
-      <div class="farum-card-texto">
-        <h3>${slide.titulo}</h3>
-        <p>${slide.descricao}</p>
-      </div>
-    `;
+        // Criar o conteúdo do slide (foto e texto)
+        const slideContent = `
+          <div class="farum-card-foto">
+            <img src="${slide.imagem}" alt="${slide.titulo}">
+          </div>
+          <div class="farum-card-texto">
+            <h3>${slide.titulo}</h3>
+            <p>${slide.descricao}</p>
+          </div>
+        `;
 
-        carrossel.appendChild(div);
+        // Adicionar o conteúdo do slide ao botão
+        button.innerHTML = slideContent;
+
+        // Adicionar evento de clique ao botão, se necessário
+        button.addEventListener("click", () => {
+          const body = document.body;
+          const abrirArtigo = document.querySelector(".farum-modal");
+          const fundoOpaco = document.querySelector(".fundo-opaco");
+
+          abrirArtigo.classList.add("ativa");
+          fundoOpaco.classList.add("ativa");
+          body.classList.add("modal-aberto");
+        });
+
+        farum -
+          modal.addEventListener("scroll", () => {
+            if (farum - modal.scrollTop > 200) {
+              scrollParaCima.classList.add("show");
+            } else {
+              scrollParaCima.classList.remove("show");
+            }
+          });
+
+        // Rolar para o topo quando o botão é clicado
+        scrollParaCima.addEventListener("click", () => {
+          farum - modal.scrollTo({ top: 0, behavior: "smooth" });
+        });
+
+        // Adicionar o botão (com o slide dentro) ao carrossel
+        carrossel.appendChild(button);
       });
 
-      totalItems = slides.length; // atualizar o total de itens
+      totalItems = slides.length; // Atualizar o total de itens, se necessário
     }
 
     // chama a funcao para carregar os slides ao iniciar
