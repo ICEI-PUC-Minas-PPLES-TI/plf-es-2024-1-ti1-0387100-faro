@@ -1,0 +1,39 @@
+{
+    "pets": [
+        {
+            "id_pet": "1",
+            "nome": "Rex",
+            "foto": "./assets/images/rex.jpg",
+            "raca": "Labrador",
+            "idade": 5,
+            "id_dono": "1",
+            "categoria": "achado",
+            "localizacao": {
+                "cidade": "Belo Horizonte",
+                "estado": "MG"
+            },
+            "descricao": "Cachorro amigável encontrado no centro da cidade."
+        }
+    ],
+    "donos": [
+        {
+            "id_dono": "1",
+            "nome": "João Silva",
+            "endereco": "Rua A, 123",
+            "telefone": "1234-5678",
+            "data_nascimento": "2000-10-31"
+        }
+    ],
+    "consultas": [
+        {
+            "id_consulta": "1",
+            "id_pet": "1",
+            "data": "2023-05-20",
+            "profissional": "Dr. Carlos",
+            "local": {
+                "nome": "Lar do Pet Gordo",
+                "endereco": "Rua A, 123"
+            }
+        }
+    ]
+}
