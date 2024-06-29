@@ -31,11 +31,15 @@ document.addEventListener("DOMContentLoaded", function () {
         const items = document.querySelectorAll(".farum-carrosel .item");
         items.forEach((item) => item.classList.remove("current-item"));
 
-        items[currentItem].scrollIntoView({
-          inline: "center",
-          behavior: "smooth",
-          block: "nearest",
-        });
+        items[currentItem].scrollIntoView(
+          {
+            inline: "center",
+            behavior: "smooth",
+            block: "nearest",
+          },
+          100
+        );
+
         // bom para adicionar estilo no current-item dps:
         items[currentItem].classList.add("current-item");
       });
@@ -94,6 +98,25 @@ document.addEventListener("DOMContentLoaded", function () {
       totalItems = slides.length; // Atualizar o total de itens, se necessário
       configurarModalScroll();
     }
+    function avancarSlideAutomaticamente() {
+      setInterval(() => {
+        let nextItem = currentItem + 1;
+        if (nextItem >= totalItems) {
+          nextItem = 0; // Volta para o primeiro slide ao chegar no último
+        }
+
+        const items = document.querySelectorAll(".farum-carrosel .item");
+        items[nextItem].scrollIntoView({
+          inline: "center",
+          behavior: "smooth", // Comportamento suave ao scroll
+          block: "nearest", // Garante que o slide fique visível
+        });
+
+        currentItem = nextItem;
+        items.forEach((item) => item.classList.remove("current-item"));
+        items[currentItem].classList.add("current-item");
+      }, 5000); // Intervalo ajustável conforme necessário
+    }
 
     function abrirModal() {
       const body = document.body;
@@ -136,6 +159,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // chama a funcao para carregar os slides ao iniciar
     carregarSlides();
+    avancarSlideAutomaticamente();
   })();
 
   /* faq */
