@@ -6,6 +6,7 @@
 }
 
 body {
+  background-color: #fafafa;
   font-family: "Roboto", Arial, Helvetica, sans-serif;
   font-size: 1rem;
   line-height: 1.5;
@@ -22,6 +23,10 @@ textarea {
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
+}
+
+button {
+  border: none;
 }
 
 li {
@@ -63,7 +68,6 @@ header {
 }
 
 .logoTitle {
-  font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
   font-weight: 600;
   font-style: normal;
@@ -278,24 +282,62 @@ header {
 }
 
 .farum-modal {
+  color: #0a0313;
   display: none;
-  background-color: #fff;
-  padding: 4rem 4rem 3rem 4rem;
+  background-color: #fafafa;
+  padding: 2rem 4rem 3rem 4rem;
   margin-bottom: 5rem;
   border-radius: 0.3125rem;
   position: fixed;
-  top: 0rem;
+  top: 2rem;
   left: 50%;
   transform: translateX(-50%);
   overflow-y: auto;
-  height: 100vh;
+  height: 90vh;
   z-index: 777;
+}
+
+.farum-modal::-webkit-scrollbar {
+  width: 9.5px;
+}
+
+.farum-modal::-webkit-scrollbar-thumb {
+  background-color: #cccccce7;
+  background: linear-gradient(to top, #6613d27a, #9a3db6b7, #cc208dd0);
+  border-radius: 1rem;
+  transition: background 0.3s ease-in-out;
+  border: 1.5px solid rgb(184, 184, 184);
+}
+
+.farum-modal::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to top, #6713d2, #9a3db6, #cc208e);
+}
+
+.farum-modal::-webkit-scrollbar-track {
+  background: #cacaca9c;
+}
+/* para firefox */
+.farum-modal::-moz-scrollbar {
+  width: 9.5px;
+}
+
+.farum-modal::-moz-scrollbar-thumb {
+  background-color: #cccccce7;
+  background: linear-gradient(to top, #6713d2, #9a3db6, #cc208e);
+  border-radius: 1rem;
+}
+
+.farum-modal::-moz-scrollbar-track {
+  background: #dddddd9c;
 }
 
 .farum-modal .farum-fechar-modal {
   position: absolute;
-  right: 1rem;
-  top: 1rem;
+  /* right: 1rem; */
+  left: 1.5rem;
+  /* top: 1rem; */
+  top: 1.5rem;
+
   transition: transform 0.3s;
   cursor: pointer;
 }
@@ -313,21 +355,61 @@ header {
 
 .farum-modal-img img {
   border-radius: 0.3125rem;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   max-width: 600px;
   height: auto;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  border: 2px solid gainsboro;
 }
 
 .farum-modal h3 {
   text-align: center;
-  margin-bottom: 3rem;
+  font-family: "Montserrat", sans-serif;
   font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.informacoes-artigo {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.informacoes-artigo span {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.informacoes-artigo img {
+  width: 1.3rem;
+}
+
+.farum-modal .data-artigo,
+.farum-modal .tempo-artigo {
+  color: #2b2b2b91;
+  font-style: italic;
+  font-weight: 500;
 }
 
 .farum-modal h4 {
   margin-top: 2rem;
   margin-bottom: 0.5rem;
   font-size: 1.2rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.farum-modal h4::before {
+  content: "";
+  display: inline-block;
+  background: rgb(121, 2, 62);
+  width: 8px;
+  height: 8px;
+  border-radius: 100%;
+  position: absolute;
+  left: -1rem;
 }
 
 .farum-modal p {
@@ -348,7 +430,7 @@ header {
 
 .farum-modal .scroll-para-cima {
   position: absolute;
-  bottom: -67rem;
+  bottom: -71.5rem;
   right: 1rem;
   background-color: inherit;
   outline: none;
@@ -387,12 +469,19 @@ header {
 
 .perguntas input,
 .input-buscas input {
+  outline: none;
   max-width: 80ch;
   width: 100%;
   padding: 1rem;
   border: 0;
   border-radius: 1.5rem;
   border: 1px solid gray;
+}
+
+.perguntas input:hover,
+.perguntas input:focus {
+  border: 1px solid purple;
+  box-shadow: 0 0 0 2px plum;
 }
 
 .perguntas .contato {

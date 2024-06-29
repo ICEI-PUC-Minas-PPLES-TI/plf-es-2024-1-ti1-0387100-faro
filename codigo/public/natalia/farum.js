@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   /* farum */
+  const buttonFecharModal = document.querySelector(".farum-fechar-modal");
 
   (function () {
     // funcao para criar o carrossel
@@ -61,8 +62,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // funcao para preencher o carrossel com os slides
     function acrescentarSlides(slides) {
-      const modal = document.querySelector(".farum-modal");
-      const scrollParaCima = document.querySelector(".scroll-para-cima");
       const carrossel = document.querySelector(".farum-carrosel");
       carrossel.innerHTML = ""; // Limpar qualquer conteúdo existente
 
@@ -88,36 +87,51 @@ document.addEventListener("DOMContentLoaded", function () {
         // Adicionar o conteúdo do slide ao botão
         button.innerHTML = slideContent;
 
-        // Adicionar evento de clique ao botão, se necessário
-        button.addEventListener("click", () => {
-          const body = document.body;
-          const abrirArtigo = document.querySelector(".farum-modal");
-          const fundoOpaco = document.querySelector(".fundo-opaco");
-
-          abrirArtigo.classList.add("ativa");
-          fundoOpaco.classList.add("ativa");
-          body.classList.add("modal-aberto");
-        });
-
-        farum -
-          modal.addEventListener("scroll", () => {
-            if (farum - modal.scrollTop > 200) {
-              scrollParaCima.classList.add("show");
-            } else {
-              scrollParaCima.classList.remove("show");
-            }
-          });
-
-        // Rolar para o topo quando o botão é clicado
-        scrollParaCima.addEventListener("click", () => {
-          farum - modal.scrollTo({ top: 0, behavior: "smooth" });
-        });
-
-        // Adicionar o botão (com o slide dentro) ao carrossel
+        button.addEventListener("click", abrirModal);
         carrossel.appendChild(button);
       });
 
       totalItems = slides.length; // Atualizar o total de itens, se necessário
+      configurarModalScroll();
+    }
+
+    function abrirModal() {
+      const body = document.body;
+      const abrirArtigo = document.querySelector(".farum-modal");
+      const fundoOpaco = document.querySelector(".fundo-opaco");
+
+      abrirArtigo.classList.add("ativa");
+      fundoOpaco.classList.add("ativa");
+      body.classList.add("modal-aberto");
+    }
+
+    function fecharModal() {
+      const body = document.body;
+      const abrirArtigo = document.querySelector(".farum-modal");
+      const fundoOpaco = document.querySelector(".fundo-opaco");
+
+      abrirArtigo.classList.remove("ativa");
+      fundoOpaco.classList.remove("ativa");
+      body.classList.remove("modal-aberto");
+    }
+    buttonFecharModal.addEventListener("click", fecharModal);
+
+    // Função para configurar o comportamento do scroll no modal
+    function configurarModalScroll() {
+      const modal = document.querySelector(".farum-modal");
+      const scrollParaCima = document.querySelector(".scroll-para-cima");
+
+      modal.addEventListener("scroll", () => {
+        if (modal.scrollTop > 200) {
+          scrollParaCima.classList.add("show");
+        } else {
+          scrollParaCima.classList.remove("show");
+        }
+      });
+
+      scrollParaCima.addEventListener("click", () => {
+        modal.scrollTo({ top: 0, behavior: "smooth" });
+      });
     }
 
     // chama a funcao para carregar os slides ao iniciar
