@@ -39,6 +39,15 @@
       },
       "id": "b82f"
     }
+  ],
+  "agendamentos": [
+    {
+      "nomePet": "Rex",
+      "modalidade": "Consulta",
+      "data": "2024-07-01",
+      "hora": "10:00",
+      "local": "Veterinária XYZ"
+    }
   ]
 }
 
