@@ -6,6 +6,9 @@
 }
 
 body {
+
+  background-color: #fafafa;
+
   font-family: "Roboto", Arial, Helvetica, sans-serif;
   font-size: 1rem;
   line-height: 1.5;
@@ -23,6 +26,12 @@ textarea {
   font-size: inherit;
   line-height: inherit;
 }
+
+button {
+  border: none;
+  background: none;
+}
+
 
 li {
   list-style: none;
@@ -64,6 +73,7 @@ header {
 
 .logoTitle {
   font-family: "Montserrat", sans-serif;
+
   font-optical-sizing: auto;
   font-weight: 600;
   font-style: normal;
@@ -80,6 +90,10 @@ header {
 }
 .ativa {
   display: block;
+}
+
+.modal-aberto {
+  overflow: hidden;
 }
 
 /* header */
@@ -183,6 +197,18 @@ header {
   margin-bottom: 2rem;
 }
 
+
+.adiciona-artigo {
+  position: absolute;
+  right: 1rem;
+  top: 0.7rem;
+  cursor: pointer;
+}
+
+.adiciona-artigo img {
+  max-width: 1.8rem;
+}
+
 .farum-slider {
   margin: 2rem 1rem 1rem 1rem;
   max-width: 900px;
@@ -196,7 +222,7 @@ header {
 }
 
 .farum-slider-botoes button {
-  background-color: white;
+  background: #fafafa;
   border: none;
   border: 1px solid grey;
   border-radius: 100%;
@@ -229,10 +255,26 @@ header {
     10px 0 5px -10px rgba(0, 0, 0, 0.5);
 }
 
+
+.farum-carrosel button {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  text-align: left;
+  flex-grow: 1;
+  cursor: pointer;
+}
+
 .farum-card {
   min-width: 300px;
   display: flex;
   flex-direction: column;
+}
+
+.farum-card-foto {
+  width: 100%;
 }
 
 .farum-card-texto {
@@ -258,12 +300,199 @@ header {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /*colocar separado na img e no texto funcionou bem melhor do que colocar no card inteiro*/
 }
 
+
+.farum-modal {
+  color: #0a0313;
+  /* display: none; */
+  background-color: #fafafa;
+  padding: 2rem 4rem 3rem 4rem;
+  margin-bottom: 5rem;
+  border-radius: 0.3125rem;
+  position: fixed;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  overflow-y: auto;
+  height: 90vh;
+  z-index: 777;
+}
+
+.farum-modal::-webkit-scrollbar {
+  width: 9.5px;
+}
+
+.farum-modal::-webkit-scrollbar-thumb {
+  background-color: #cccccce7;
+  background: linear-gradient(to top, #6613d27a, #9a3db6b7, #cc208dd0);
+  border-radius: 1rem;
+  transition: background 0.3s ease-in-out;
+  border: 1.5px solid rgb(184, 184, 184);
+}
+
+.farum-modal::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to top, #6713d2, #9a3db6, #cc208e);
+}
+
+.farum-modal::-webkit-scrollbar-track {
+  background: #cacaca9c;
+}
+/* para firefox */
+.farum-modal::-moz-scrollbar {
+  width: 9.5px;
+}
+
+.farum-modal::-moz-scrollbar-thumb {
+  background-color: #cccccce7;
+  background: linear-gradient(to top, #6713d2, #9a3db6, #cc208e);
+  border-radius: 1rem;
+}
+
+.farum-modal::-moz-scrollbar-track {
+  background: #dddddd9c;
+}
+
+.farum-modal .farum-fechar-modal {
+  position: absolute;
+  /* right: 1rem; */
+  left: 1.5rem;
+  /* top: 1rem; */
+  top: 1.5rem;
+
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+
+.farum-modal .farum-fechar-modal:hover {
+  transform: scale(1.5);
+}
+
+.farum-modal-img {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.farum-modal-img img {
+  border-radius: 0.3125rem;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  height: auto;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  border: 2px solid gainsboro;
+}
+
+.farum-modal h3 {
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.informacoes-artigo {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.informacoes-artigo span {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.informacoes-artigo img {
+  width: 1.3rem;
+}
+
+.farum-modal .data-artigo,
+.farum-modal .tempo-artigo {
+  color: #2b2b2b91;
+  font-style: italic;
+  font-weight: 500;
+}
+
+.farum-modal h4 {
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.farum-modal h4::before {
+  content: "";
+  display: inline-block;
+  background: rgb(121, 2, 62);
+  width: 8px;
+  height: 8px;
+  border-radius: 100%;
+  position: absolute;
+  left: -1rem;
+}
+
+#criar-Artigo.farum-modal {
+  border: 1px solid plum;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+#criar-Artigo.farum-modal input {
+  margin-bottom: 2rem;
+}
+
+#criar-Artigo.farum-modal textarea {
+  /* max-width: 20rem; */
+  flex: 1;
+}
+
+.farum-modal p {
+  max-width: 80ch;
+  font-size: 1rem;
+}
+
+.fundo-opaco {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 555;
+  display: none;
+}
+
+.farum-modal .scroll-para-cima {
+  position: absolute;
+  bottom: -71.5rem;
+  right: 1rem;
+  background-color: inherit;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.farum-modal .scroll-para-cima:hover {
+  transform: scale(1.3);
+}
+
+.farum-modal .scroll-para-cima img {
+  width: 2rem;
+}
+
+
 /* faq -------------------------------------------------*/
 .perguntas {
   margin: 1rem;
 }
 
 .perguntas button {
+
+  background: #fafafa;
+
   border-width: 0;
 }
 
@@ -280,6 +509,9 @@ header {
 
 .perguntas input,
 .input-buscas input {
+
+  outline: none;
+
   max-width: 80ch;
   width: 100%;
   padding: 1rem;
@@ -287,6 +519,14 @@ header {
   border-radius: 1.5rem;
   border: 1px solid gray;
 }
+
+
+.perguntas input:hover,
+.perguntas input:focus {
+  border: 1px solid purple;
+  box-shadow: 0 0 0 2px plum;
+}
+
 
 .perguntas .contato {
   margin-top: 6rem;
@@ -330,7 +570,9 @@ header {
   gap: 0.5rem;
   align-items: center;
   cursor: pointer;
+
   background: none;
+
   width: 100%;
   text-align: left;
 }
@@ -406,9 +648,49 @@ footer .dog-nose {
 
 /* media queries */
 
-@media (max-width: 800px) {
+
+@media (max-width: 900px) {
   .perguntas h2 {
     margin-bottom: 2.5rem;
+  }
+  .farum-modal {
+    padding: 2rem;
+  }
+  .farum-modal-img img {
+    width: 500px;
+  }
+}
+
+@media (max-width: 620px) {
+  .farum-modal h3 {
+    font-size: 1.2rem;
+  }
+  .farum-modal-img img {
+    width: 350px;
+  }
+}
+
+@media (max-width: 450px) {
+  .farum-modal {
+    padding: 0.8rem;
+  }
+  .farum-modal-img img {
+    width: 300px;
+  }
+  .farum-modal h3 {
+    font-size: 1rem;
+    margin-top: 2rem;
+  }
+  .farum-modal h4::before {
+    width: 50%;
+    height: 3px;
+    border-radius: 0.3125rem;
+    background: rgba(221, 160, 221, 0.534);
+    left: 0;
+    bottom: 0;
+  }
+  .farum-modal .scroll-para-cima {
+    bottom: -99rem;
   }
 }
 
@@ -589,3 +871,8 @@ footer .dog-nose {
     margin-bottom: 0.5rem;
   }
 }
+
+.ativa {
+  display: block;
+}
+

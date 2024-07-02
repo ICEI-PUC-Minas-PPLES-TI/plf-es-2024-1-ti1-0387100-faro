@@ -1,6 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
   /* farum */
 
+  const buttonFecharModal = document.querySelector(".farum-fechar-modal");
+
+
   (function () {
     // funcao para criar o carrossel
     const controles = document.querySelectorAll(".controle");
@@ -30,11 +33,16 @@ document.addEventListener("DOMContentLoaded", function () {
         const items = document.querySelectorAll(".farum-carrosel .item");
         items.forEach((item) => item.classList.remove("current-item"));
 
-        items[currentItem].scrollIntoView({
-          inline: "center",
-          behavior: "smooth",
-          block: "nearest",
-        });
+
+        items[currentItem].scrollIntoView(
+          {
+            inline: "center",
+            behavior: "smooth",
+            block: "nearest",
+          },
+          100
+        );
+
         // bom para adicionar estilo no current-item dps:
         items[currentItem].classList.add("current-item");
       });
@@ -65,30 +73,99 @@ document.addEventListener("DOMContentLoaded", function () {
       carrossel.innerHTML = ""; // Limpar qualquer conteúdo existente
 
       slides.forEach((slide, index) => {
-        const div = document.createElement("div");
-        div.classList.add("farum-card", "item");
+
+        // Criar o botão para envolver o slide
+        const button = document.createElement("button");
+        button.classList.add("farum-card", "item");
         if (index === 0) {
-          div.classList.add("current-item");
+          button.classList.add("current-item");
         }
 
-        div.innerHTML = `
-      <div class="farum-card-foto">
-        <img src="${slide.imagem}" alt="${slide.titulo}">
-      </div>
-      <div class="farum-card-texto">
-        <h3>${slide.titulo}</h3>
-        <p>${slide.descricao}</p>
-      </div>
-    `;
+        // Criar o conteúdo do slide (foto e texto)
+        const slideContent = `
+          <div class="farum-card-foto">
+            <img src="${slide.imagem}" alt="${slide.titulo}">
+          </div>
+          <div class="farum-card-texto">
+            <h3>${slide.titulo}</h3>
+            <p>${slide.descricao}</p>
+          </div>
+        `;
 
-        carrossel.appendChild(div);
+        // Adicionar o conteúdo do slide ao botão
+        button.innerHTML = slideContent;
+
+        button.addEventListener("click", abrirModal);
+        carrossel.appendChild(button);
       });
 
-      totalItems = slides.length; // atualizar o total de itens
+      totalItems = slides.length; // Atualizar o total de itens, se necessário
+      configurarModalScroll();
+    }
+    function avancarSlideAutomaticamente() {
+      setInterval(() => {
+        let nextItem = currentItem + 1;
+        if (nextItem >= totalItems) {
+          nextItem = 0;
+        }
+
+        const items = document.querySelectorAll(".farum-carrosel .item");
+        items[nextItem].scrollIntoView({
+          inline: "center",
+          behavior: "smooth",
+          block: "nearest",
+        });
+
+        currentItem = nextItem;
+        items.forEach((item) => item.classList.remove("current-item"));
+        items[currentItem].classList.add("current-item");
+      }, 5000);
+    }
+
+    function abrirModal() {
+      const body = document.body;
+      const abrirArtigo = document.querySelector(".farum-modal");
+      const fundoOpaco = document.querySelector(".fundo-opaco");
+
+      abrirArtigo.classList.add("ativa");
+      fundoOpaco.classList.add("ativa");
+      body.classList.add("modal-aberto");
+    }
+
+    function fecharModal() {
+      const body = document.body;
+      const abrirArtigo = document.querySelector(".farum-modal");
+      const fundoOpaco = document.querySelector(".fundo-opaco");
+
+      abrirArtigo.classList.remove("ativa");
+      fundoOpaco.classList.remove("ativa");
+      body.classList.remove("modal-aberto");
+    }
+    buttonFecharModal.addEventListener("click", fecharModal);
+
+    // Função para configurar o comportamento do scroll no modal
+    function configurarModalScroll() {
+      const modal = document.querySelector(".farum-modal");
+      const scrollParaCima = document.querySelector(".scroll-para-cima");
+
+      modal.addEventListener("scroll", () => {
+        if (modal.scrollTop > 200) {
+          scrollParaCima.classList.add("show");
+        } else {
+          scrollParaCima.classList.remove("show");
+        }
+      });
+
+      scrollParaCima.addEventListener("click", () => {
+        modal.scrollTo({ top: 0, behavior: "smooth" });
+      });
     }
 
     // chama a funcao para carregar os slides ao iniciar
     carregarSlides();
+
+    avancarSlideAutomaticamente();
+
   })();
 
   /* faq */

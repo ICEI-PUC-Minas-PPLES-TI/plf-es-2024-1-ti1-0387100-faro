@@ -22,6 +22,7 @@
       "nome": "João Silva",
       "endereco": "Rua A, 123",
       "telefone": "1234-5678",
+
       "data_nascimento": "2000-10-31",
       "id": "6832"
     }
@@ -40,3 +41,4 @@
     }
   ]
 }
+
