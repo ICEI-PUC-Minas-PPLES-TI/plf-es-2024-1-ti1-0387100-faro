@@ -35,5 +35,14 @@
         "endereco": "Rua A, 123"
       }
     }
+  ],
+  "agendamentos": [
+    {
+      "nomePet": "Rex",
+      "modalidade": "Consulta",
+      "data": "2024-07-01",
+      "hora": "10:00",
+      "local": "Veterinária XYZ"
+    }
   ]
 }
