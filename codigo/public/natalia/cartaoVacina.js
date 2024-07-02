@@ -57,6 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
     entradas.forEach((entrada) => (entrada.value = ""));
   };
 
+
   function validarEntradas() {
     const campos = [
       { id: "data", nome: "Data" },
@@ -88,6 +89,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const [ano, mes, dia] = data.split("-");
     return `${dia}/${mes}/${ano}`;
   }
+
 
   const adicionarCompromisso = (event) => {
     event.preventDefault();
@@ -148,6 +150,7 @@ document.addEventListener("DOMContentLoaded", function () {
     limparAgenda();
     db_compromisso.forEach(criarLinha);
   };
+
 
   const preencherInput = (compromisso) => {
     const campos = [
