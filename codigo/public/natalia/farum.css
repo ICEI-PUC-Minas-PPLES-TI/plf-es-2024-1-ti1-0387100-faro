@@ -6,7 +6,9 @@
 }
 
 body {
+
   background-color: #fafafa;
+
   font-family: "Roboto", Arial, Helvetica, sans-serif;
   font-size: 1rem;
   line-height: 1.5;
@@ -29,6 +31,7 @@ button {
   border: none;
   background: none;
 }
+
 
 li {
   list-style: none;
@@ -69,6 +72,8 @@ header {
 }
 
 .logoTitle {
+  font-family: "Montserrat", sans-serif;
+
   font-optical-sizing: auto;
   font-weight: 600;
   font-style: normal;
@@ -192,6 +197,7 @@ header {
   margin-bottom: 2rem;
 }
 
+
 .adiciona-artigo {
   position: absolute;
   right: 1rem;
@@ -217,7 +223,6 @@ header {
 
 .farum-slider-botoes button {
   background: #fafafa;
-
   border: none;
   border: 1px solid grey;
   border-radius: 100%;
@@ -249,6 +254,7 @@ header {
   box-shadow: -10px 0 5px -10px rgba(0, 0, 0, 0.5),
     10px 0 5px -10px rgba(0, 0, 0, 0.5);
 }
+
 
 .farum-carrosel button {
   background: none;
@@ -293,6 +299,7 @@ header {
   object-fit: cover;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /*colocar separado na img e no texto funcionou bem melhor do que colocar no card inteiro*/
 }
+
 
 .farum-modal {
   color: #0a0313;
@@ -476,12 +483,14 @@ header {
   width: 2rem;
 }
 
+
 /* faq -------------------------------------------------*/
 .perguntas {
   margin: 1rem;
 }
 
 .perguntas button {
+
   background: #fafafa;
 
   border-width: 0;
@@ -500,7 +509,9 @@ header {
 
 .perguntas input,
 .input-buscas input {
+
   outline: none;
+
   max-width: 80ch;
   width: 100%;
   padding: 1rem;
@@ -509,11 +520,13 @@ header {
   border: 1px solid gray;
 }
 
+
 .perguntas input:hover,
 .perguntas input:focus {
   border: 1px solid purple;
   box-shadow: 0 0 0 2px plum;
 }
+
 
 .perguntas .contato {
   margin-top: 6rem;
@@ -557,6 +570,9 @@ header {
   gap: 0.5rem;
   align-items: center;
   cursor: pointer;
+
+  background: none;
+
   width: 100%;
   text-align: left;
 }
@@ -631,6 +647,7 @@ footer .dog-nose {
 }
 
 /* media queries */
+
 
 @media (max-width: 900px) {
   .perguntas h2 {
@@ -858,3 +875,4 @@ footer .dog-nose {
 .ativa {
   display: block;
 }
+

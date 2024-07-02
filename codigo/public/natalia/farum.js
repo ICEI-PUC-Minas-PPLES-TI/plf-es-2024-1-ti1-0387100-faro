@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
   /* farum */
+
   const buttonFecharModal = document.querySelector(".farum-fechar-modal");
+
 
   (function () {
     // funcao para criar o carrossel
@@ -30,6 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const items = document.querySelectorAll(".farum-carrosel .item");
         items.forEach((item) => item.classList.remove("current-item"));
+
 
         items[currentItem].scrollIntoView(
           {
@@ -70,6 +73,7 @@ document.addEventListener("DOMContentLoaded", function () {
       carrossel.innerHTML = ""; // Limpar qualquer conteúdo existente
 
       slides.forEach((slide, index) => {
+
         // Criar o botão para envolver o slide
         const button = document.createElement("button");
         button.classList.add("farum-card", "item");
@@ -159,7 +163,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // chama a funcao para carregar os slides ao iniciar
     carregarSlides();
+
     avancarSlideAutomaticamente();
+
   })();
 
   /* faq */
