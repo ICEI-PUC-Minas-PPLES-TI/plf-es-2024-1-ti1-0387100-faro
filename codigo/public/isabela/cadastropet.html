@@ -19,15 +19,14 @@
                 <li><a href="#"><img class="icon" src="assets.cadastropet/services_icon.png" alt="Agregador e serviços"></a></li>
                 <li><a href="#"><img class="icon" src="assets.cadastropet/forum_icon.png" alt="Fórum e artigos"></a></li>
             </ul>
-        </div> 
+        </div>
     </div>
-
+    
     <div class="formulario">
         <form id="PetForm">
             <h1>Cadastre seu pet</h1>
-            <p>Preencha com os dados do pet:</p>
+            <p class="subtitle">Preencha com os dados do pet:</p>
             <div class="container">
-                <img src="assets.cadastropet/pet-house.png" alt="Perfil" id="iconperfil">
                 <div class="column">
                     <input type="text" name="nome" id="nome" placeholder="Nome:" required>
                     <input type="text" name="genero" id="genero" placeholder="Gênero:" required>
@@ -38,9 +37,13 @@
                     <input type="date" id="datadenascimento" name="datadenascimento" placeholder="Data de Nascimento:" required>
                     <input type="text" id="raca" name="raca" placeholder="Raça:" required>
                     <input type="text" id="objetivo" name="objetivo" placeholder="Deseja doar ou buscar um pet:" required>
-                    <input type="submit" id="salvar" value="Salvar informações" name="registrar">
+                    <label for="foto" class="custom-file-upload">
+                        <p class="text-file">Adicionar foto de perfil</p>
+                        <input type="file" id="foto" name="foto" accept="image/*" required>
+                    </label>
                 </div>
             </div>
+            <input type="submit" id="salvar" value="Salvar informações" name="registrar">
         </form>
     </div>
 
@@ -56,6 +59,7 @@
                     <th>Raça</th>
                     <th>Cidade</th>
                     <th>Objetivo</th>
+                    <th>Foto de perfil</th>
                     <th>Ações</th>
                 </tr>
             </thead>

@@ -1,7 +1,6 @@
+// Função para ler os dados do localStorage
 function leDados() {
-    
     const strDados = localStorage.getItem('db');
-
     if (strDados) {
         return JSON.parse(strDados);
     } else {
@@ -9,6 +8,7 @@ function leDados() {
     }
 }
 
+// Função para salvar os dados no localStorage
 function salvaDados(dados) {
     localStorage.setItem('db', JSON.stringify(dados));
 }
@@ -29,6 +29,7 @@ function imprimeDados() {
             <td>${pet.raca}</td>
             <td>${pet.cidade}</td>
             <td>${pet.objetivo}</td>
+            <td><img src="${pet.foto}" alt="${pet.nome}" class="pet-foto"></td>
             <td>
                 <button class="edit-btn" onclick="editarDado(${index})">Editar</button>
                 <button class="delete-btn" onclick="excluirDado(${index})">Excluir</button>
@@ -41,9 +42,9 @@ function imprimeDados() {
 
 function incluirDados(event) {
     event.preventDefault();
-
     const objDados = leDados();
 
+    // Cria um novo objeto com os valores dos campos do formulário
     const novoDado = {
         nome: document.getElementById('nome').value,
         genero: document.getElementById('genero').value,
@@ -52,6 +53,7 @@ function incluirDados(event) {
         raca: document.getElementById('raca').value,
         cidade: document.getElementById('cidade').value,
         objetivo: document.getElementById('objetivo').value,
+        foto: document.getElementById('foto').files[0] ? URL.createObjectURL(document.getElementById('foto').files[0]) : ''
     };
 
     const index = document.getElementById('salvar').dataset.index;
@@ -67,21 +69,8 @@ function incluirDados(event) {
     document.querySelector('form').reset();
 }
 
-function editarDado(index) {
-    const objDados = leDados();
-    const pet = objDados.Dados[index];
 
-    document.getElementById('nome').value = pet.nome;
-    document.getElementById('genero').value = pet.genero;
-    document.getElementById('especie').value = pet.especie;
-    document.getElementById('datadenascimento').value = pet.datadenascimento;
-    document.getElementById('raca').value = pet.raca;
-    document.getElementById('cidade').value = pet.cidade;
-    document.getElementById('objetivo').value = pet.objetivo;
-
-    document.getElementById('salvar').dataset.index = index;
-}
-
+// Função para excluir um dado do localStorage
 function excluirDado(index) {
     const objDados = leDados();
     objDados.Dados.splice(index, 1);
@@ -89,5 +78,24 @@ function excluirDado(index) {
     imprimeDados();
 }
 
-document.querySelector('form').addEventListener('submit', incluirDados);
-window.onload = () => imprimeDados();
+// Função para editar um dado do localStorage
+function editarDado(index) {
+    const objDados = leDados();
+    const dado = objDados.Dados[index];
+
+    document.getElementById('nome').value = dado.nome;
+    document.getElementById('genero').value = dado.genero;
+    document.getElementById('especie').value = dado.especie;
+    document.getElementById('datadenascimento').value = dado.datadenascimento;
+    document.getElementById('raca').value = dado.raca;
+    document.getElementById('cidade').value = dado.cidade;
+    document.getElementById('objetivo').value = dado.objetivo;
+    // A foto não pode ser preenchida diretamente no input
+
+    document.getElementById('salvar').dataset.index = index;
+}
+
+document.getElementById('PetForm').addEventListener('submit', incluirDados);
+
+// Imprime os dados ao carregar a página
+imprimeDados();
