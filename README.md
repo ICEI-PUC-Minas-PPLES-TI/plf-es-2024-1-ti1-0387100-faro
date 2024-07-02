@@ -13,4 +13,6 @@ Esse problema ocorre em um contexto em que os animais de estimação são consid
 * Cleiton Silva Tavares
 
 ## Instruções de utilização
-...
+Fazer o clone do repositório (ou download e extração dos arquivos), renderizar a estrutura via sua solução preferida iniciando do arquivo codigo/public/index.html.
+Recomendamos a hospedagem no Render ou uso local via Live Server no Visual Studio Code.
+Não é necessário utilizar o JSON Server.
