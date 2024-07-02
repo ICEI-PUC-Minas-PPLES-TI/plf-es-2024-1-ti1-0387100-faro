@@ -1,0 +1,153 @@
+.farum-artigo {
+  color: #0a0313;
+  /* display: none; */
+  background-color: #fafafa;
+  padding-inline: 10rem;
+}
+
+.farum-artigo::-webkit-scrollbar {
+  width: 9.5px;
+}
+
+.farum-artigo::-webkit-scrollbar-thumb {
+  background-color: #cccccce7;
+  background: linear-gradient(to top, #6613d27a, #9a3db6b7, #cc208dd0);
+  border-radius: 1rem;
+  transition: background 0.3s ease-in-out;
+  border: 1.5px solid rgb(184, 184, 184);
+}
+
+.farum-artigo::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to top, #6713d2, #9a3db6, #cc208e);
+}
+
+.farum-artigo::-webkit-scrollbar-track {
+  background: #cacaca9c;
+}
+/* para firefox */
+.farum-artigo::-moz-scrollbar {
+  width: 9.5px;
+}
+
+.farum-artigo::-moz-scrollbar-thumb {
+  background-color: #cccccce7;
+  background: linear-gradient(to top, #6713d2, #9a3db6, #cc208e);
+  border-radius: 1rem;
+}
+
+.farum-artigo::-moz-scrollbar-track {
+  background: #dddddd9c;
+}
+
+.farum-artigo-img {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.farum-artigo-img img {
+  border-radius: 0.3125rem;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  height: auto;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  border: 2px solid gainsboro;
+}
+
+.farum-artigo .artigo-titulo {
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5rem;
+  margin-block: 1.5rem;
+}
+
+.informacoes-artigo {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.informacoes-artigo span {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.informacoes-artigo img {
+  width: 1.3rem;
+}
+
+.farum-artigo .data-artigo,
+.farum-artigo .tempo-artigo {
+  color: #2b2b2b91;
+  font-style: italic;
+  font-weight: 500;
+}
+
+.farum-artigo h4 {
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.farum-artigo h4::before {
+  content: "";
+  display: inline-block;
+  background: rgb(121, 2, 62);
+  width: 8px;
+  height: 8px;
+  border-radius: 100%;
+  position: absolute;
+  left: -1rem;
+}
+
+.farum-artigo p {
+  max-width: 80ch;
+  font-size: 1rem;
+}
+
+@media (max-width: 900px) {
+  .farum-artigo {
+    padding: 2rem;
+  }
+  .farum-artigo-img img {
+    width: 500px;
+  }
+}
+
+@media (max-width: 620px) {
+  .farum-artigo h3 {
+    font-size: 1.2rem;
+  }
+  .farum-artigo-img img {
+    width: 350px;
+  }
+}
+
+@media (max-width: 450px) {
+  .farum-artigo {
+    padding: 0.8rem;
+  }
+  .farum-artigo-img img {
+    width: 300px;
+  }
+  .farum-artigo h3 {
+    font-size: 1rem;
+    margin-top: 2rem;
+  }
+  .farum-artigo h4::before {
+    width: 50%;
+    height: 3px;
+    border-radius: 0.3125rem;
+    background: rgba(221, 160, 221, 0.534);
+    left: 0;
+    bottom: 0;
+  }
+  .farum-artigo .scroll-para-cima {
+    bottom: -99rem;
+  }
+}
