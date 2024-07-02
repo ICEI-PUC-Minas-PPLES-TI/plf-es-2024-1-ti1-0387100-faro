@@ -516,7 +516,16 @@ Tutores de Animais de Estimação: Este é o público principal do app, composto
                 <p>Apresente a divisão de papéis e tarefas entre os membros do grupo. Informe quem é o Scrum Master, o Product Owner e os desenvolvedores. Informe também quem é o responsável pela documentação do projeto.</p>
                 <p>Apresente o quadro de gerenciamento do time (Kanban), seu formato e as experiências na utilização dessa ferramenta (GitHub Projects) </p>
               </div>
-              <p>......  COLOQUE AQUI O SEU TEXTO ......</p>
+              <ul>
+    <li><strong>Scrum Master:</strong> Cleiton. Responsável por garantir que o time siga os princípios do Scrum, removendo impedimentos e facilitando as reuniões diárias, de planejamento e de revisão.</li>
+    <li><strong>Product Owner:</strong> PUC Minas. Representada pelos professores e orientadores, é responsável por definir e priorizar as funcionalidades do produto, garantindo que o desenvolvimento esteja alinhado com as necessidades e expectativas dos usuários.</li>
+    <li><strong>Desenvolvedores:</strong></li>
+    <ul>
+        <li><strong>Isabela Sales:</strong> Desenvolvimento de funcionalidades, implementação de código, design da interface do usuário e experiência do usuário (UI/UX), e testes. Também responsável pela integração de diferentes componentes do sistema.</li>
+        <li><strong>Natália dos Reis:</strong> Desenvolvimento de funcionalidades, design da interface do usuário e experiência do usuário (UI/UX), e testes. Responsável pela criação de wireframes e protótipos interativos.</li>
+        <li><strong>Kayler Moura:</strong> Desenvolvimento de funcionalidades, implementação de código, design da interface do usuário e experiência do usuário (UI/UX), e testes. Responsável pela documentação técnica e suporte ao controle de versão no GitHub.</li>
+    </ul>
+</ul>
             </section>
 
 
@@ -530,7 +539,18 @@ Tutores de Animais de Estimação: Este é o público principal do app, composto
                   <img class="img-fluid" src="assets/images/exemplo-workflow.png" alt="">
                 </p>
               </div>
-              <p>......  COLOQUE AQUI O SEU TEXTO ......</p>
+              <p><strong>Gerência de Commits:</strong> Cada desenvolvedor era responsável por fazer commits frequentes e bem documentados, seguindo uma convenção de mensagens de commit para garantir clareza e rastreabilidade. As mensagens de commit incluíam um breve resumo das alterações realizadas, permitindo que todos os membros do time entendessem rapidamente o propósito de cada mudança.</p>
+
+<p><strong>Gerência de Branches:</strong> Utilizamos uma estratégia de branching onde cada nova funcionalidade ou correção de bug era desenvolvida em uma branch separada. As branches eram nomeadas de acordo com a funcionalidade ou issue que estavam abordando (por exemplo, "feature/cadastro-usuario" ou "bugfix/corrigir-login"). Após a conclusão do desenvolvimento e testes em uma branch, ela era revisada e, em seguida, mergeada na branch principal.</p>
+
+<p><strong>Gerência de Merges:</strong> Para evitar conflitos e garantir a qualidade do código, as merges eram feitas através de pull requests (PRs). Cada PR era revisado por pelo menos um outro membro do time antes de ser aprovado e mergeado na branch principal. Isso ajudou a identificar problemas ou melhorias antes que o código fosse integrado ao projeto principal.</p>
+
+<p><strong>Gerência de Tags:</strong> Utilizamos tags para marcar versões importantes do projeto, como releases principais e milestones significativas. Isso facilitou o rastreamento do progresso do desenvolvimento e a referência a estados específicos do código.</p>
+
+<p><strong>Gerência de Issues:</strong> As issues no GitHub foram utilizadas para rastrear bugs, novas funcionalidades e melhorias. Cada issue incluía uma descrição detalhada do problema ou funcionalidade, a prioridade e a pessoa responsável por resolvê-la. As issues eram revisadas regularmente nas reuniões de sprint para garantir que o backlog estivesse atualizado e alinhado com as prioridades do projeto.</p>
+
+<p>Esse processo de gerenciamento de versionamento no GitHub garantiu que o desenvolvimento fosse colaborativo, organizado e eficiente, permitindo que o time mantivesse um alto padrão de qualidade no código e no gerenciamento de tarefas.</p>
+
             </section>
           </section>
           <hr class="divider">
@@ -545,6 +565,96 @@ Tutores de Animais de Estimação: Este é o público principal do app, composto
               <p>Apresente cada uma das funcionalidades que a aplicação fornece tanto para os usuários quanto aos administradores da solução.</p>
               <p>Inclua, para cada funcionalidade, itens como: (1) titulos e descrição da funcionalidade; (2) Estrutura de dados associada; (3) o detalhe sobre as instruções de acesso e uso.</p>
             </div>
+            <h5>Funcionalidades da Aplicação</h5>
+  <p>A aplicação fornece uma variedade de funcionalidades tanto para os usuários quanto para os administradores. Abaixo estão detalhadas cada uma dessas funcionalidades:</p>
+  
+  <div>
+    <h6>1. Cadastro de Usuários e Pets</h6>
+    <p><strong>Título:</strong> Cadastro de Usuários e Pets</p>
+    <p><strong>Descrição:</strong> Permite que os usuários se cadastrem na aplicação e adicionem informações sobre seus pets.</p>
+    <p><strong>Estrutura de Dados:</strong> 
+      <ul>
+        <li>Usuário: { id, nome, email, senha }</li>
+        <li>Pet: { id, nome, espécie, raça, data_nascimento, id_usuario }</li>
+      </ul>
+    </p>
+    <p><strong>Instruções de Acesso e Uso:</strong> 
+      <ul>
+        <li>Os usuários devem acessar a tela de cadastro e preencher suas informações pessoais.</li>
+        <li>Após o cadastro, os usuários podem adicionar pets preenchendo os dados solicitados.</li>
+      </ul>
+    </p>
+  </div>
+
+  <div>
+    <h6>2. Tela para Pets Perdidos, Achados ou em Doação</h6>
+    <p><strong>Título:</strong> Mural de Pets Perdidos, Achados ou em Doação</p>
+    <p><strong>Descrição:</strong> Permite que os usuários listem pets perdidos, achados ou disponíveis para adoção.</p>
+    <p><strong>Estrutura de Dados:</strong> 
+      <ul>
+        <li>Pet: { id, nome, espécie, raça, status, descrição, localização, contato }</li>
+      </ul>
+    </p>
+    <p><strong>Instruções de Acesso e Uso:</strong> 
+      <ul>
+        <li>Os usuários podem acessar o mural e visualizar a lista de pets.</li>
+        <li>Para adicionar um pet, os usuários devem preencher os campos de descrição, status (perdido, achado, doação), localização e contato.</li>
+      </ul>
+    </p>
+  </div>
+
+  <div>
+    <h6>3. Cartão de Vacinas e Calendário de Consultas</h6>
+    <p><strong>Título:</strong> Cartão de Vacinas e Calendário de Consultas</p>
+    <p><strong>Descrição:</strong> Permite que os usuários registrem e acompanhem as vacinas e consultas dos seus pets.</p>
+    <p><strong>Estrutura de Dados:</strong> 
+      <ul>
+        <li>Vacina: { id, id_pet, tipo_vacina, data_vacina, próxima_vacina }</li>
+        <li>Consulta: { id, id_pet, data_consulta, veterinário, descrição }</li>
+      </ul>
+    </p>
+    <p><strong>Instruções de Acesso e Uso:</strong> 
+      <ul>
+        <li>Os usuários devem acessar a seção de vacinas e consultas do pet.</li>
+        <li>Para adicionar uma vacina ou consulta, preencher os dados solicitados como tipo de vacina, data da vacinação ou data da consulta e veterinário.</li>
+      </ul>
+    </p>
+  </div>
+
+  <div>
+    <h6>4. Serviços Recomendados nas Proximidades</h6>
+    <p><strong>Título:</strong> Serviços Recomendados nas Proximidades</p>
+    <p><strong>Descrição:</strong> Fornece recomendações de serviços para pets próximos à localização do usuário.</p>
+    <p><strong>Estrutura de Dados:</strong> 
+      <ul>
+        <li>Serviço: { id, tipo_serviço, nome, localização, contato, avaliação }</li>
+      </ul>
+    </p>
+    <p><strong>Instruções de Acesso e Uso:</strong> 
+      <ul>
+        <li>Os usuários devem permitir o acesso à sua localização para obter recomendações personalizadas.</li>
+        <li>A aplicação exibirá uma lista de serviços próximos, com detalhes e avaliações.</li>
+      </ul>
+    </p>
+  </div>
+
+  <div>
+    <h6>5. Fórum com Artigos Úteis e Perguntas Frequentes</h6>
+    <p><strong>Título:</strong> Fórum de Artigos e Perguntas Frequentes</p>
+    <p><strong>Descrição:</strong> Um fórum onde os usuários podem encontrar artigos e informações úteis sobre cuidados com pets e responder ou fazer perguntas.</p>
+    <p><strong>Estrutura de Dados:</strong> 
+      <ul>
+        <li>Artigo: { id, título, conteúdo, autor }</li>
+        <li>Pergunta: { id, título, conteúdo, autor, respostas }</li>
+      </ul>
+    </p>
+    <p><strong>Instruções de Acesso e Uso:</strong> 
+      <ul>
+        <li>Os usuários podem acessar o fórum para ler artigos ou procurar respostas para suas perguntas.</li>
+        <li>Para adicionar um novo artigo ou pergunta, os usuários devem preencher o título e o conteúdo.</li>
+      </ul>
+    </p>
+  </div>
 
             <section id="ti_video">
               <h4>Video do Projeto</h4>
