@@ -27,6 +27,7 @@ textarea {
 
 button {
   border: none;
+  background: none;
 }
 
 li {
@@ -191,6 +192,17 @@ header {
   margin-bottom: 2rem;
 }
 
+.adiciona-artigo {
+  position: absolute;
+  right: 1rem;
+  top: 0.7rem;
+  cursor: pointer;
+}
+
+.adiciona-artigo img {
+  max-width: 1.8rem;
+}
+
 .farum-slider {
   margin: 2rem 1rem 1rem 1rem;
   max-width: 900px;
@@ -284,7 +296,7 @@ header {
 
 .farum-modal {
   color: #0a0313;
-  display: none;
+  /* display: none; */
   background-color: #fafafa;
   padding: 2rem 4rem 3rem 4rem;
   margin-bottom: 5rem;
@@ -411,6 +423,22 @@ header {
   border-radius: 100%;
   position: absolute;
   left: -1rem;
+}
+
+#criar-Artigo.farum-modal {
+  border: 1px solid plum;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+#criar-Artigo.farum-modal input {
+  margin-bottom: 2rem;
+}
+
+#criar-Artigo.farum-modal textarea {
+  /* max-width: 20rem; */
+  flex: 1;
 }
 
 .farum-modal p {

@@ -102,20 +102,20 @@ document.addEventListener("DOMContentLoaded", function () {
       setInterval(() => {
         let nextItem = currentItem + 1;
         if (nextItem >= totalItems) {
-          nextItem = 0; // Volta para o primeiro slide ao chegar no último
+          nextItem = 0;
         }
 
         const items = document.querySelectorAll(".farum-carrosel .item");
         items[nextItem].scrollIntoView({
           inline: "center",
-          behavior: "smooth", // Comportamento suave ao scroll
-          block: "nearest", // Garante que o slide fique visível
+          behavior: "smooth",
+          block: "nearest",
         });
 
         currentItem = nextItem;
         items.forEach((item) => item.classList.remove("current-item"));
         items[currentItem].classList.add("current-item");
-      }, 5000); // Intervalo ajustável conforme necessário
+      }, 5000);
     }
 
     function abrirModal() {
