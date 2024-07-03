@@ -1,0 +1,153 @@
+body {
+  background-color: #fafafa;
+  color: rgb(12, 0, 12);
+}
+
+/* introducao */
+#home .main-container {
+  margin-inline: 1rem;
+}
+.home-introducao {
+  margin-bottom: 12rem;
+}
+
+.home-introducao-texto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.home-introducao-texto h1 {
+  font-size: 5rem;
+  font-family: "Montserrat", sans-serif;
+}
+
+.home-introducao {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 400px;
+}
+
+.home-introducao-texto > p {
+  max-width: 50ch;
+  text-align: center;
+}
+.home-introducao-cards {
+  display: flex;
+  gap: 1rem;
+}
+
+.home-introducao-cards p {
+  padding: 0.7rem;
+  border: 1px solid purple;
+  border-radius: 1rem;
+  box-shadow: 0 0 0 2px plum;
+  /* border: 1px solid #dc6b19;
+  border-radius: 1rem;
+  box-shadow: 0 0 0 2px #fae284; */
+}
+
+.home-introducao-fotos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+.home-introducao-fotos img {
+  width: 200px;
+  height: 200px;
+  border-radius: 0.3125rem;
+}
+
+.home-introducao-fotos img:nth-child(1) {
+  animation-duration: 19s;
+  /* border: 5rem solid purple; */
+  position: absolute;
+  top: 2rem;
+  border-top-left-radius: 3rem;
+}
+
+.home-introducao-fotos img:nth-child(2) {
+  width: 400px;
+  height: 250px;
+  position: absolute;
+  top: 4.2rem;
+  right: -0.5rem;
+  z-index: -888;
+}
+
+.home-introducao-fotos img:nth-child(3) {
+  width: 180px;
+  height: 200px;
+  position: absolute;
+  right: 23rem;
+  bottom: -8rem;
+  border-bottom-left-radius: 5rem;
+}
+
+.detalhe1 {
+  background-color: rgba(137, 43, 226, 0.096);
+  width: 20rem;
+  height: 20rem;
+  border-radius: 50%;
+  position: absolute;
+  z-index: -999;
+  top: 6rem;
+  left: 6rem;
+}
+
+.detalhe2 {
+  background-color: #fc4100;
+  width: 5rem;
+  height: 5rem;
+  border-top-right-radius: 3rem;
+  position: absolute;
+  z-index: -999;
+  bottom: 0rem;
+  left: 18rem;
+  opacity: 0.8;
+}
+
+/* servicos */
+.home-servicos {
+  margin-inline: 5rem;
+}
+
+.home-servicos p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.home-servicos-card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: 2rem;
+}
+
+.home-servicos-card li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(128, 128, 128, 0.226);
+  padding: 1rem;
+  width: 10rem;
+}
+
+.home-servicos-card img {
+  width: 3rem;
+}
+
+.home-servicos-card h2 {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  text-align: center;
+}

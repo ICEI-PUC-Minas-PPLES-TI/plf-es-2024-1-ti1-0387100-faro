@@ -4,37 +4,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing Page</title>
+    <title>Faro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <style id="montserrat">
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./natalia/farum.css">
+    <link rel="stylesheet" href="./style.css">
+
 </head>
 
 <body>
-    <div id="shoulder">
-        <div id="logo">FARO</div>
-        <div id="menu">
-            <ul>
-                <li><a href="#"><img class="icon" src="assets/profile_icon.png" alt="Perfil"></a></li>
-                <li><a href="./Pedro/index.html"><img class="icon" src="assets/vaccine_icon.png" alt="Cartão de vacinas"></a></li>
-                <li><a href="./Kayler/lost-and-found.html"><img class="icon" src="assets/finder_icon.png" alt="Perdi meu peto/Doar"></a></li>
-                <li><a href="#"><img class="icon" src="assets/services_icon.png" alt="Agregador e serviços"></a></li>
-                <li><a href="./natalia/farum.html"><img class="icon" src="assets/forum_icon.png" alt="Fórum e artigos"></a></li>
-            </ul>
+    <div id="home">
+        <header>
+            <div id="shoulder">
+
+                <button id="button-mobile">
+                    <span id="hamburguer"></span>
+                </button>
+
+                <nav id="menu" aria-label="navegacao-primaria">
+
+                    <a href="#" id="logo">FARO</a>
+
+                    <ul>
+
+                        <li>
+                            <a href="./isabela/CADASTROS PETS - FARO/cadastropet.html" class="icon">
+                                <span>Perfil</span>
+                                <img src="./natalia/assets/img/profile_icon.png" alt="Perfil">
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="./natalia/cartaoVacina.html" class="icon">
+                                <span>Cartão Vacina</span>
+                                <img src="./natalia/assets/img/vaccine_icon.png" alt="Cartão Vacina">
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="./Kayler/lost-and-found.html" class="icon">
+                                <span>PetFinder / Doar</span>
+                                <img src="./natalia/assets/img/finder_icon.png" alt="PetFinder / Doar">
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="./isabela/sprint3.isabela/index.servicos.html" class="icon">
+                                <span>Serviços</span>
+                                <img src="./natalia/assets/img/services_icon.png" alt="Serviços">
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="./natalia/farum.html" class="icon">
+                                <span>Fórum e Artigos</span>
+                                <img src="./natalia/assets/img/forum_icon.png" alt="Fórum e Artigos">
+                            </a>
+                        </li>
+
+                    </ul>
+                </nav>
+
+            </div>
+        </header>
+
+        <div class="main-container">
+
+            <section class="home-introducao">
+                <div class="home-introducao-texto">
+                    <h1>FARO</h1>
+                    <p>Veja como a tecnologia pode transformar a maneira como você cuida do seu pet, oferecendo mais segurança, saúde e felicidade para seu melhor amigo. Afinal, nossos pets merecem o melhor!
+                    </p>
+                    <div class="home-introducao-cards">
+                        <p>facilidade</p>
+                        <p>acompanhamento</p>
+                        <p>rastreio</p>
+                        <p>organização</p>
+                    </div>
+
+                </div>
+
+                <div class="home-introducao-fotos">
+                    <img src="./assets/home/karin-hiselius-aPJif68ghkg-unsplash.jpg" alt="">
+                    <img src="./assets/home/dogs_playing.jpg" alt="">
+                    <img src="./assets/home/james-barker-v3-zcCWMjgM-unsplash.jpg" alt="">
+                    <span class="detalhe1"></span>
+                    <span class="detalhe2"></span>
+
+
+
+                </div>
+
+            </section>
+
+            <!-- <section class="home-servicos">
+                <p>nosso sistema oferece uma experiência integrada para você e seu fiel companheiro.</p>
+                <span>conheça o que temos a oferecer</span>
+                <ul class="home-servicos-card">
+                    <li>
+                        <img src="./assets/icones/medical-book.png" alt="">
+                        <h2>Agenda Pet</p>
+                    </li>
+                    <li>
+                        <img src="./assets/icones/transparency.png" alt="">
+                        <h2>Achados e<br> perdidos</h2>
+                    </li>
+                    <li>
+                        <img src="./assets/icones/pet-shop.png" alt="">
+                        <h2>Lojas Próximas</h2>
+                    </li>
+                    <li>
+                        <img src="./assets/icones/speech-bubble.png" alt="">
+                        <h2>Farum</h2>
+                    </li>
+                </ul>
+
+            </section> -->
+
         </div>
     </div>
-    <div id="content">
-        <div id="center-card">
-            <div id="logo-big">FARO</div>
-            <ul>
-                <li>Facilidade</li>
-                <li>Acompanhamento</li>
-                <li>Rastreamento</li>
-                <li>Organização</li>
-            </ul>
-        </div>
-    </div>
+
+
+
+    <footer>
+        <p>FARO
+            <i class="dog-nose">
+            </i>
+            </h2>
+        <p>Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="./natalia/btn-mobile.js"></script>
 </body>
 
 </html>
