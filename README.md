@@ -4,7 +4,7 @@ As pessoas que sofrem dessa dor são aquelas que têm um vínculo emocional prof
 Esse problema ocorre em um contexto em que os animais de estimação são considerados membros da família, e os proprietários estão cada vez mais conscientes da importância de fornecer cuidados adequados a eles. No entanto, a falta de recursos centralizados e acessíveis para lidar com essas questões pode levar a frustração e preocupação desnecessárias.
 
 ## Alunos integrantes da equipe
-* Isabela Souza SAles
+* Isabela Souza Sales
 * Kayler de Freitas Moura
 * Natália dos Reis Santos
 
@@ -13,4 +13,6 @@ Esse problema ocorre em um contexto em que os animais de estimação são consid
 * Cleiton Silva Tavares
 
 ## Instruções de utilização
-...
+Fazer o clone do repositório (ou download e extração dos arquivos), renderizar a estrutura via sua solução preferida iniciando do arquivo codigo/public/index.html.
+Recomendamos a hospedagem no Render ou uso local via Live Server no Visual Studio Code.
+Não é necessário utilizar o JSON Server.
