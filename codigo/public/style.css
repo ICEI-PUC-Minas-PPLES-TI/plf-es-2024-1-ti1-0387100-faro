@@ -1,0 +1,327 @@
+body {
+  background-color: #fafafa;
+  color: rgb(12, 0, 12);
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+}
+
+#home .main-container {
+  margin: 0 auto;
+  max-width: 1300px;
+  padding-left: 10rem;
+  padding-right: 10rem;
+}
+
+/* introducao */
+
+.home-introducao {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 400px;
+  margin-bottom: 12rem;
+}
+
+.home-introducao-texto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-inline: 1.5rem;
+}
+
+.home-introducao-texto h1 {
+  font-size: 5rem;
+  font-family: "Montserrat", sans-serif;
+}
+
+.home-introducao-texto > p {
+  max-width: 50ch;
+  text-align: center;
+  text-align: left;
+}
+.home-introducao-cards {
+  display: flex;
+  /* flex-wrap: wrap; */
+  justify-content: center;
+  gap: 1rem;
+}
+
+.home-introducao-cards p {
+  padding: 0.7rem;
+  border: 1px solid purple;
+  border-radius: 1rem;
+  box-shadow: 0 0 0 2px plum;
+  /* border: 1px solid #dc6b19;
+  border-radius: 1rem;
+  box-shadow: 0 0 0 2px #fae284; */
+}
+
+.home-introducao-fotos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+.home-introducao-fotos img {
+  width: 200px;
+  height: 200px;
+  border-radius: 0.3125rem;
+}
+
+.home-introducao-fotos img:nth-child(1) {
+  animation-duration: 19s;
+  /* border: 5rem solid purple; */
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  border-top-left-radius: 3rem;
+}
+
+.home-introducao-fotos img:nth-child(2) {
+  width: 400px;
+  height: 250px;
+  position: absolute;
+  top: 6rem;
+  right: -7rem;
+  z-index: -888;
+}
+
+.home-introducao-fotos img:nth-child(3) {
+  width: 180px;
+  height: 200px;
+  position: absolute;
+  right: 15rem;
+  bottom: -5rem;
+  border-bottom-left-radius: 5rem;
+}
+
+.detalhe1 {
+  background-color: rgba(137, 43, 226, 0.096);
+  width: 20rem;
+  height: 20rem;
+  border-radius: 50%;
+  position: absolute;
+  z-index: -999;
+  top: 6rem;
+  left: 6rem;
+}
+
+.detalhe2 {
+  background-color: #fc4100;
+  width: 5rem;
+  height: 5rem;
+  border-top-right-radius: 3rem;
+  position: absolute;
+  z-index: -999;
+  bottom: -2rem;
+  left: 18rem;
+  opacity: 0.8;
+}
+
+/* servicos */
+
+.home-servicos span {
+  font-family: "montserrat";
+  font-size: 1.2rem;
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.home-servicos > p {
+  margin-bottom: 2rem;
+}
+
+.home-servicos-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+.home-servicos-card li {
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  width: 8rem;
+  height: 10rem;
+  font-size: 0.8rem;
+}
+
+.card-agenda,
+.card-lojasproximas,
+.card-achados,
+.card-farum {
+  position: relative;
+}
+
+.card-agenda .card-agenda-intro,
+.card-lojasproximas .card-lojasproximas-intro {
+  color: initial;
+  font-size: 0.9rem;
+  position: absolute;
+  left: -100%;
+  top: 1.8rem;
+  opacity: 0;
+  transition: left 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+.card-achados .card-achados-intro,
+.card-farum .card-farum-intro {
+  color: initial;
+  font-size: 0.9rem;
+  position: absolute;
+  right: -100%;
+  top: 1.8rem;
+  opacity: 0;
+  transition: right 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.card-agenda:hover .card-agenda-intro,
+.card-lojasproximas:hover .card-lojasproximas-intro {
+  opacity: 1;
+  left: -22rem;
+}
+
+.card-achados:hover .card-achados-intro,
+.card-farum:hover .card-farum-intro {
+  opacity: 1;
+  right: -22rem;
+}
+
+.card-agenda,
+.card-lojasproximas {
+  justify-self: end;
+}
+
+.card-agenda .card-agenda-intro,
+.card-lojasproximas .card-lojasproximas-intro {
+  text-align: right;
+}
+
+.card-achados .card-achados-intro,
+.card-farum .card-farum-intro {
+  text-align: left;
+}
+
+.card-agenda,
+.card-farum {
+  border-top-left-radius: 1rem;
+  background-color: #add899;
+}
+
+.card-achados,
+.card-lojasproximas {
+  background-color: #83c0c1;
+}
+
+.card-lojasproximas {
+  border-bottom-left-radius: 1rem;
+}
+
+.card-achados,
+.card-farum {
+  justify-self: start;
+}
+
+.home-servicos-card img {
+  width: 3rem;
+  height: auto;
+  filter: invert();
+}
+
+.card-achados {
+  border-top-right-radius: 1rem;
+}
+
+.card-farum {
+  border-bottom-right-radius: 1rem;
+}
+
+.card-agenda-intro,
+.card-lojasproximas-intro,
+.card-achados-intro,
+.card-farum-intro {
+  max-width: 40ch;
+}
+
+.card-agenda-modalidade {
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: end;
+  gap: 1rem;
+}
+.card-agenda-modalidade a {
+  cursor: pointer;
+  padding: 0.2rem 1rem;
+  border-radius: 1rem;
+
+  border: 1px solid green;
+  box-shadow: 0 0 0 1.5px lightgreen;
+}
+
+.card-agenda-modalidade a:hover {
+  color: white;
+  background-color: lightgreen;
+}
+
+@media (max-width: 900px) {
+  .home-introducao {
+    grid-template-columns: 1fr;
+    margin: 1rem;
+  }
+  .home-introducao-texto {
+    grid-row: 2;
+  }
+  .home-introducao-fotos {
+    margin-bottom: 30rem;
+  }
+
+  .home-introducao-fotos img:nth-child(1) {
+    top: 3rem;
+    width: 180px;
+  }
+
+  .home-introducao-fotos img:nth-child(2) {
+    width: 350px;
+    height: 200px;
+    top: 10rem;
+    right: 0rem;
+  }
+
+  .home-introducao-fotos img:nth-child(3) {
+    width: 140px;
+    height: 160px;
+    left: 2rem;
+    bottom: -29rem;
+  }
+
+  .detalhe2 {
+    top: 23rem;
+    left: 15rem;
+  }
+
+  /* servicos */
+
+  .home-servicos {
+    margin-top: 40rem;
+  }
+
+  .home-servicos-card li:not(:nth-child(1)):before {
+    content: "";
+    width: 100%;
+    height: 2px;
+    background: rgba(128, 128, 128, 0.226);
+    bottom: 0;
+    top: -1rem;
+    left: 0rem;
+    position: absolute;
+  }
+  .home-servicos-card {
+    gap: 0rem;
+  }
+
+  .home-servicos-card li {
+    margin: 0.2rem;
+  }
+}

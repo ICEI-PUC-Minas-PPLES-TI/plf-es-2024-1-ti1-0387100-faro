@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,59 +8,64 @@
     <link rel="stylesheet" href="style.servicos.css">
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6hA4YqOhlF67d-ukwcQO8L_IUzF8rgO8&libraries=places"></script>
 </head>
+
 <body>
-</head>
-<body>
-    <div class="title">
-        <h1>Serviços</h1>
-        <p>Escolha uma opção e encontre as melhores alternativas próximas a você!</p>
-    </div>
+    </head>
 
-    <div id="shoulder">
-        <div id="logo"><h2>FARO</h2></div>
-        <div id="menu">
-            <ul>
-                <li><a href="/codigo/public/isabela/cadastropet.html"><img class="icon" src="assets.servicos/profile_icon.png" alt="Perfil"></a></li>
-                <li><a href="/codigo/public/Kayler/pets-card.html"><img class="icon" src="assets.servicos/vaccine_icon.png" alt="Cartão de vacinas"></a></li>
-                <li><a href="/codigo/public/Kayler/lost-and-found.html"><img class="icon" src="assets.servicos/finder_icon.png" alt="Perdi meu peto/Doar"></a></li>
-                <li><a href="index.servicos.html"><img class="icon" src="assets.servicos/services_icon.png" alt="Agregador e serviços"></a></li>
-                <li><a href="/codigo/public/natalia/farum.html"><img class="icon" src="assets.servicos/forum_icon.png" alt="Fórum e artigos"></a></li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="container">
-        <div class="buttons">
-            <button class="button" onclick="updateMap('alimentacao')">
-                <img src="assets.servicos/alimentacao.png" alt="Alimentação" id="icon1">
-                <p>Alimentação</p>
-            </button>
-            <button class="button" onclick="updateMap('farmacia')">
-                <img src="assets.servicos/farmacia.png" alt="Farmácia" id="icon2">
-                <p>Farmácias e clínicas</p>
-            </button>
-            <button class="button" onclick="updateMap('petshop')">
-                <img src="assets.servicos/compras.png" alt="Pet shop" id="icon3">
-                <p>Pet shop</p>
-            </button>
-            <button class="button" onclick="updateMap('hoteis')">
-                <img src="assets.servicos/hoteis.png" alt="Hotéis" id="icon4">
-                <p>Hotéis</p>
-            </button>
+    <body>
+        <div class="title">
+            <h1>Serviços</h1>
+            <p>Escolha uma opção e encontre as melhores alternativas próximas a você!</p>
         </div>
 
-        <div class="search-container">
-            <input type="text" class="search-input" placeholder="Encontre locais próximos a você! Digite aqui o nome da sua cidade...">
-            <button class="search-button">Buscar</button>
+        <div id="shoulder">
+            <div id="logo">
+                <h2>FARO</h2>
+            </div>
+            <div id="menu">
+                <ul>
+                    <li><a href="../login/login.html"><img class="icon" src="../../assets/icones/profile_icon.png" alt="Perfil"></a></li>
+                    <li><a href="../../Kayler/pets-card.html"><img class="icon" src="../../assets/icones/vaccine_icon.png" alt="Cartão de vacinas"></a></li>
+                    <li><a href="../../Kayler/lost-and-found.html"><img class="icon" src="../../assets/icones/finder_icon.png" alt="Perdi meu peto/Doar"></a></li>
+                    <li><a href="../sprint3.isabela/index.servicos.html"><img class="icon" src="../../assets/icones/services_icon.png" alt="Agregador e serviços"></a></li>
+                    <li><a href="../../natalia/farum.html"><img class="icon" src="../../assets/icones/forum_icon.png" alt="Fórum e artigos"></a></li>
+                </ul>
+            </div>
         </div>
 
-        <div id="map"></div>
-        <div id="info" class="card-container"></div>
-    </div>
-    
-    <div id="detalhes"></div>
-   
-    <script src="script.servicos.js"></script>
+        <div class="container">
+            <div class="buttons">
+                <button class="button" onclick="updateMap('alimentacao')">
+                    <img src="assets.servicos/alimentacao.png" alt="Alimentação" id="icon1">
+                    <p>Alimentação</p>
+                </button>
+                <button class="button" onclick="updateMap('farmacia')">
+                    <img src="assets.servicos/farmacia.png" alt="Farmácia" id="icon2">
+                    <p>Farmácias e clínicas</p>
+                </button>
+                <button class="button" onclick="updateMap('petshop')">
+                    <img src="assets.servicos/compras.png" alt="Pet shop" id="icon3">
+                    <p>Pet shop</p>
+                </button>
+                <button class="button" onclick="updateMap('hoteis')">
+                    <img src="assets.servicos/hoteis.png" alt="Hotéis" id="icon4">
+                    <p>Hotéis</p>
+                </button>
+            </div>
 
-</body>
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Encontre locais próximos a você! Digite aqui o nome da sua cidade...">
+                <button class="search-button">Buscar</button>
+            </div>
+
+            <div id="map"></div>
+            <div id="info" class="card-container"></div>
+        </div>
+
+        <div id="detalhes"></div>
+
+        <script src="script.servicos.js"></script>
+
+    </body>
+
 </html>

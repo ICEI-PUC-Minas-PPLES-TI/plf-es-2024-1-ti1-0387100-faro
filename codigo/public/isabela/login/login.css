@@ -1,0 +1,128 @@
+/* Gerais - início */
+* {
+  padding: 0;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to top right, #ffffff, #bec3fc);
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+/* Gerais - fim */
+
+/* Barra lateral - Início */
+
+#shoulder {
+  background-color: #643f92;
+  color: #ffffff;
+  padding: 15px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100%;
+}
+
+#menu {
+  margin-top: 20px;
+}
+
+#logo {
+  margin-top: 90px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 80px;
+  font-size: 14px;
+}
+
+#menu ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#menu ul li {
+  margin-bottom: 10px;
+  filter: invert(1);
+  margin-top: 40px;
+}
+
+#menu ul li img {
+  width: 80%;
+  height: 80%;
+  padding-left: 6px;
+}
+
+#menu ul li a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+#logo-big {
+  font-family: Montserrat, sans-serif;
+  color: #ffffff;
+  font-weight: 800px;
+  font-size: 90px;
+  position: absolute;
+  text-align: left;
+  padding-left: 10%;
+}
+
+/* Barra lateral - Fim */
+
+/* Formulário login - início */
+.container {
+  background-color: #643f92;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 400px;
+}
+
+.logo h2 {
+  color: #ffffff;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+form h1 {
+  color: #ffffff;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 5px;
+  background-color: #ffffff;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 20px;
+  background-color: #ffffff;
+  color: #643f92;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+button[type="submit"]:hover {
+  background-color: #bec3fc;
+}
+/* Formulário login - Fim */
